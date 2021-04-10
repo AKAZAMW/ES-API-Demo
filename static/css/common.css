@@ -1,0 +1,24 @@
+.container2 {
+    font-size: 100px;
+    color: red;
+    border: 1px solid red;
+    width: 1920px;
+    height: 1080px;
+    position: absolute;
+    overflow: hidden;
+    background-image: url('../img/bg3.png');
+}
+
+.container2 .guide {
+    width: 1920px;
+    height:1080px;
+}
+
+.container2 .feedback {
+    width: 200px;
+    height: 80px;
+    position: absolute;
+    top: 20px;
+    right: 40px;
+
+}
