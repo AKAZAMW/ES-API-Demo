@@ -1,12 +1,9 @@
 .container2 {
-    font-size: 100px;
-    color: red;
-    border: 1px solid red;
     width: 1920px;
     height: 1080px;
-    position: absolute;
-    overflow: hidden;
-    background-image: url('../img/bg3.png');
+    background-color: transparent;
+    background-image: url('http://120.236.119.11:58011/ivod/jiangsuVR/img/home/bg3.png');
+    background-repeat: no-repeat;
 }
 
 .container2 .guide {
