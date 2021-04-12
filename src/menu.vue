@@ -8,11 +8,19 @@
       <!--</div>-->
       <!--</li>-->
       <li :focusable=false>
+        <p class="feature-title">天翼高清 VR全景</p>
+      </li>
+      <li class="feature-item" :focusable=false>
+        <div v-for="(feature, index) in videoList" @focus="onFocus" :key="feature.id" :focusable=true :focusScale="1.1" :requestFocus="index === 0" @click="routeTo(`/video/${feature.id}`)" class="button">
+          <p duplicateParentState>{{ feature.name }}</p>
+        </div>
+      </li>
+      <li :focusable=false>
         <p class="feature-title">基础组件 Demos</p>
       </li>
       <li class="feature-item" :focusable=false>
         <div class="feature-item" :clipChildren="false">
-          <div v-for="(feature, index) in featureList" @focus="onFocus" :key="feature.id" :focusable=true :focusScale="1.1" :requestFocus="index === 0" @click="routeTo(`/demo/${feature.id}`)" class="button">
+          <div v-for="(feature, index) in featureList" @focus="onFocus" :key="feature.id" :focusable=true :focusScale="1.1" @click="routeTo(`/demo/${feature.id}`)" class="button">
             <p duplicateParentState>{{ feature.name }}</p>
           </div>
         </div>
@@ -46,6 +54,7 @@ import Vue from 'vue';
 import demos from './components/demos';
 import nativeDemos from './components/native-demos';
 import esTvDemos from './components/es-tv-demos';
+import hdVideo from './components/hd-video';
 import { getApp } from './util';
 
 export default {
@@ -64,6 +73,10 @@ export default {
       esFeatureList: Object.keys(esTvDemos).map(demoId => ({
         id: demoId,
         name: esTvDemos[demoId].name,
+      })),
+      videoList: Object.keys(hdVideo).map(videoId => ({
+        id: videoId,
+        name: hdVideo[videoId].name,
       })),
       Vue,
     };

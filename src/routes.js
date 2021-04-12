@@ -3,6 +3,7 @@ import routeLoading from './routeLoading.vue';
 import demos from './components/demos';
 import nativeDemos from './components/native-demos';
 import esTvDemos from './components/es-tv-demos';
+import hdVideo from './components/hd-video';
 
 export default {
   /**
@@ -38,6 +39,11 @@ export default {
       path: `/demo/${demoId}`,
       name: esTvDemos[demoId].name,
       component: esTvDemos[demoId].component,
+    })),
+    ...Object.keys(hdVideo).map(videoId => ({
+      path: `/video/${videoId}`,
+      name: hdVideo[videoId].name,
+      component: hdVideo[videoId].component,
     })),
   ],
 };
