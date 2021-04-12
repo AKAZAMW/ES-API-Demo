@@ -106,7 +106,11 @@
     },
     methods: {
       backPress() {
-        Vue.Native.callNative('DeviceEventModule', 'invokeDefaultBackPressHandler');
+        if(this.showGuide) {
+          Vue.Native.callNative('DeviceEventModule', 'invokeDefaultBackPressHandler');
+        } else {
+          this.showGuide = true;
+        }
       },
       changeShowGuide() {
         this.showGuide = !this.showGuide;
