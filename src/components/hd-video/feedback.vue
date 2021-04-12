@@ -2,8 +2,9 @@
   <div class="container2">
     <div v-if="showGuide">
       <img class="guide"  src="http://120.236.119.11:58011/ivod/jiangsuVR/img/home/help2.jpg"/>
-      <img class="feedback" :focusable="true" :requestFocus="true" @click="changeShowGuide"
-           src="http://120.236.119.11:58011/ivod/jiangsuVR/img/home/feedback_selected.png"/>
+      <div class="feedback" :focusable="true" :focusScale="1.1" @click="changeShowGuide">
+        <img style="width: 200px;height: 80px;" src="http://120.236.119.11:58011/ivod/jiangsuVR/img/home/feedback_selected.png"/>
+      </div>
     </div>
     <div v-if="!showGuide" class="report">
       <p class="report_title">故障上报</p>
@@ -63,7 +64,7 @@
         <input :focusable="true" v-model="phoneNum" style="color: white;width: 920px;height: 60px;font-size: 36px;border-radius: 10px;background-color: #6343A1;" placeholder="请输入手机号码" >
       </div>
       <div style="width: 1920px;text-align: center;">
-        <button :focusable="true" class="report_button" @click="submit">
+        <button :focusable="true" class="report_button" :focusScale="1.1"  @click="submit">
           <span style="line-height: 56px;text-align: center;font-size:32px;color: #FFFFFF;">确认</span>
         </button>
       </div>
@@ -213,7 +214,5 @@
     background-color: #7A48EF;
     margin-top: 60px;
     margin-left: 840px;
-    focus-border-style:solid;
-    focus-border-radius: 5px;
   }
 </style>
