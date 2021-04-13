@@ -1,27 +1,42 @@
 <template>
-  <div class="contain">
+  <div class="contain" ref="list">
     <div class="head" :gradientBackground="gradientBackground">
       <div class="nav-left">
         <img :src="imgSrc" class="logoimg" />
       </div>
       <div class="nav-right" :focusable="false">
-        <div class="li-1 rank current same" :focusable="true" :focusScale="1.1">
+        <div
+          class="li-1 rank current same"
+          :focusable="true"
+          :focusScale="1.1"
+          @click="routerToRank"
+        >
           <img
             class="selected"
-            src="http://120.236.119.11:58011/ivod/jiangsuVR/img/home/rank_no_selected.png"
+            src="../../../static/img/rank_no_selected.png"
           />
         </div>
-        <div class="li-1 history same" :focusable="true" :focusScale="1.1" @click="routerToHistory">
-          <img 
+        <div
+          class="li-1 history same"
+          :focusable="true"
+          :focusScale="1.1"
+          @click="routerToHistory"
+        >
+          <img
             class="selected"
-            src="http://120.236.119.11:58011/ivod/jiangsuVR/img/home/history_no_select.png"
+            src="../../../static/img/history_no_select.png"
             alt=""
           />
         </div>
-        <div class="li-1 help same" :focusable="true" :focusScale="1.1">
+        <div
+          class="li-1 help same"
+          :focusable="true"
+          :focusScale="1.1"
+          @click="routerToFeedback"
+        >
           <img
             class="selected"
-            src="http://120.236.119.11:58011/ivod/jiangsuVR/img/home/help_no_selected.png"
+            src="../../../static/img/help_no_selected.png"
             alt=""
           />
         </div>
@@ -38,10 +53,7 @@
               :focusScale="1.01"
               @focus="onChildFocus(1)"
             >
-              <img
-                class="default"
-                src="http://120.236.119.11:58011/uploads/images/b75526f5b72dc01ed7cf47d16d94c16e.png"
-              />
+              <img class="default" src="../../../static/img/yule.png" />
               <img
                 class="selected"
                 :src="selected"
@@ -57,10 +69,7 @@
               :focusScale="1.01"
               @focus="onChildFocus(2)"
             >
-              <img
-                class="default"
-                src="http://120.236.119.11:58011/uploads/images/77e77845a419585f5320bb3a4ad19fd3.png"
-              />
+              <img class="default" src="../../../static/img/mengchong.png" />
               <img
                 class="selected"
                 :src="selected"
@@ -76,10 +85,7 @@
               :focusScale="1.01"
               @focus="onChildFocus(3)"
             >
-              <img
-                class="default"
-                src="http://120.236.119.11:58011/uploads/images/516ffaeea16f5ca8021727d158be7d3e.png"
-              />
+              <img class="default" src="../../../static/img/yundong.png" />
               <img
                 class="selected"
                 :src="selected"
@@ -95,10 +101,7 @@
               :focusScale="1.01"
               @focus="onChildFocus(4)"
             >
-              <img
-                class="default"
-                src="http://120.236.119.11:58011/uploads/images/95a72f82713f5146926321b1e1677e82.png"
-              />
+              <img class="default" src="../../../static/img/lvyou.png" />
               <img
                 class="selected"
                 :src="selected"
@@ -114,10 +117,7 @@
               :focusScale="1.01"
               @focus="onChildFocus(5)"
             >
-              <img
-                class="default"
-                src="http://120.236.119.11:58011/uploads/images/e215b2ec98856fe05f75ab78fdf3af39.png"
-              />
+              <img class="default" src="../../../static/img/vr.png" />
               <img
                 class="selected"
                 :src="selected"
@@ -132,10 +132,20 @@
       </div>
     </div>
     <!-- 内容区域 -->
-    <div id="home-clumn" class="display-flex flex-column">
+    <div
+      id="home-clumn"
+      class="display-flex flex-column"
+      ref="list"
+      @scroll="onScroll"
+    >
       <div class="content-list">
         <div class="section display-flex flex-row">
-          <div class="list focus-area" :focusable="true" :focusScale="1.1">
+          <div
+            class="list focus-area"
+            :focusable="true"
+            :focusScale="1.1"
+            @click="openVideo"
+          >
             <div class="img">
               <img :src="swiperUrl" class="default" />
             </div>
@@ -145,76 +155,46 @@
               <p class="dot" :class="[isActive == 2 ? 'active' : '']"></p>
             </div>
           </div>
-          <div class="list focus-area" :focusable="true" :focusScale="1.01">
+          <div
+            class="list focus-area"
+            :focusable="true"
+            :focusScale="1.1"
+            @click="openVideo"
+          >
             <div class="img">
-              <img
-                src="http://120.236.119.11:58011/uploads/images/cef4b292d21d348d29af82ccd0060186.png"
-                class="default"
-              />
-              <!-- <img src="../img/selected/recommend_big.png" class="selected"/> -->
+              <img src="../../../static/img/baby.png" class="default" />
             </div>
           </div>
-          <div class="list focus-area" :focusable="true" :focusScale="1.01">
+          <div
+            class="list focus-area"
+            :focusable="true"
+            :focusScale="1.1"
+            @click="openVideo"
+          >
             <div class="img">
-              <img
-                src="http://120.236.119.11:58011/uploads/images/fb0255eca9c5689602b7ce921c3f048e.png"
-                class="default"
-              />
+              <img src="../../../static/img/blzy.png" class="default" />
               <!-- <img src="../img/selected/recommend_big.png" class="selected"/> -->
             </div>
           </div>
         </div>
 
         <!-- 竖排图片1 -->
+        
         <div class="section display-flex flex-row">
-            <div  v-for="(item ,i) in recmondList" :key="i"
+          <div
             class="small-list focus-area"
             :focusable="true"
-            :focusScale="1.005"
-            @focus="foncusOnImgBg(i)"
-          >
-         <div class="list-rank" v-if="item.level!=''">
-              <p class="rank-work">{{item.level}}</p>
-         </div>
-          <div class="list-label" >
-              <img :src="item.icon" v-if="item.icon!=''"/>
-            </div>  
-            <div class="img">
-              <img
-                :src="item.url"
-                class="default"
-              />
-              <img :src="imgBgColor" class="seleted-img" v-if="isImgSelect==i">
-            </div>
-            <div class="list-word">
-              <div class="view-box">
-                <text-view
-                  class="text-view"
-                  :focusable="false"
-                  :select="true"
-                  maxLines="1"
-                  ellipsizeMode="2"
-                  >{{item.name}}</text-view
-                >
-              </div>
-            </div>
-          </div>
-
-          <!-- <div
-            class="small-list focus-area"
-            :focusable="true"
-            :focusScale="1.05"
-            @focus="foncusOnImgBg"
+            :focusScale="1.1"
+            @click="openVideo"
           >
             <div class="list-rank">
-              <p class="rank-work">top1</p>
+              <p class="rank-work">Top1</p>
             </div>
+            <!-- <div class="list-label">
+              <img :src="item.icon" v-if="item.icon != ''" />
+            </div> -->
             <div class="img">
-              <img
-                src="http://120.236.119.11:58011/uploads/images/62473806fcfb449f6aba83fdc5653cc9.png"
-                class="default"
-              />
-              <img src="http://120.236.119.11:58011/ivod/jiangsuVR/img/selected/recommend_big.png" class="seleted-img">
+              <img src="../../../static/img/home/xm.png" class="default" />
             </div>
             <div class="list-word">
               <div class="view-box">
@@ -224,7 +204,7 @@
                   :select="true"
                   maxLines="1"
                   ellipsizeMode="2"
-                  >直播！大熊猫吃播</text-view
+                  >直播！大熊猫干饭</text-view
                 >
               </div>
             </div>
@@ -232,17 +212,17 @@
           <div
             class="small-list focus-area"
             :focusable="true"
-            :focusScale="1.05"
+            :focusScale="1.1"
+            @click="openVideo"
           >
             <div class="list-rank">
-              <p class="rank-work">top2</p>
+              <p class="rank-work">Top2</p>
             </div>
+            <!-- <div class="list-label">
+              <img :src="item.icon" v-if="item.icon != ''" />
+            </div> -->
             <div class="img">
-              <img
-                src="http://120.236.119.11:58011/uploads/images/6afd6f751ffed845e1b305687c4dba7b.png"
-                class="default"
-              />
-              <img src="http://120.236.119.11:58011/ivod/jiangsuVR/img/selected/recommend_big.png" class="seleted-img">
+              <img src="../../../static/img/home/top2.png" class="default" />
             </div>
             <div class="list-word">
               <div class="view-box">
@@ -252,7 +232,7 @@
                   :select="true"
                   maxLines="1"
                   ellipsizeMode="2"
-                  >AKB-48 我们不战斗</text-view
+                  >AKB48-我们不战斗</text-view
                 >
               </div>
             </div>
@@ -260,16 +240,17 @@
           <div
             class="small-list focus-area"
             :focusable="true"
-            :focusScale="1.01"
+            :focusScale="1.1"
+            @click="openVideo"
           >
             <div class="list-rank">
-              <p class="rank-work">top3</p>
+              <p class="rank-work">Top3</p>
             </div>
+            <!-- <div class="list-label">
+              <img :src="item.icon" v-if="item.icon != ''" />
+            </div> -->
             <div class="img">
-              <img
-                src="http://120.236.119.11:58011/uploads/images/0ff0018702ee41fe0e6394ba32b7f0ae.png"
-                class="default"
-              />
+              <img src="../../../static/img/home/top3.png" class="default" />
             </div>
             <div class="list-word">
               <div class="view-box">
@@ -279,7 +260,7 @@
                   :select="true"
                   maxLines="1"
                   ellipsizeMode="2"
-                  >堡垒之夜</text-view
+                  >堡垒之夜激斗</text-view
                 >
               </div>
             </div>
@@ -287,16 +268,14 @@
           <div
             class="small-list focus-area"
             :focusable="true"
-            :focusScale="1.05"
+            :focusScale="1.1"
+            @click="openVideo"
           >
             <div class="list-label">
               <img src="../../../static/img/recommend.png" />
             </div>
             <div class="img">
-              <img
-                src="http://120.236.119.11:58011/uploads/images/dbcb643ab9c00717ef5306dbf89a2941.png"
-                class="default"
-              />
+              <img src="../../../static/img/home/tj.png" class="default" />
             </div>
             <div class="list-word">
               <div class="view-box">
@@ -306,7 +285,7 @@
                   :select="true"
                   maxLines="1"
                   ellipsizeMode="2"
-                  >我的世界</text-view
+                  >我的世界逃离</text-view
                 >
               </div>
             </div>
@@ -314,16 +293,14 @@
           <div
             class="small-list focus-area"
             :focusable="true"
-            :focusScale="1.05"
+            :focusScale="1.1"
+            @click="openVideo"
           >
             <div class="list-label">
-              <img src="../../../static/img/hot.png" />
+              <img src="../../../static/img/hot.png"/>
             </div>
             <div class="img">
-              <img
-                src="http://120.236.119.11:58011/uploads/images/8a3c8c8d44f6f4dca81dc8a11899be8f.png"
-                class="default"
-              />
+              <img src="../../../static/img/home/rm.png" class="default" />
             </div>
             <div class="list-word">
               <div class="view-box">
@@ -333,15 +310,74 @@
                   :select="true"
                   maxLines="1"
                   ellipsizeMode="2"
-                  >忠实可靠的绅士柴犬</text-view
+                  >忠实可靠的柴犬</text-view
                 >
               </div>
             </div>
           </div>
-         -->
-        
+          <!-- 动态数据 -->
+          <!-- <div
+            v-for="(item, i) in recmondList"
+            :key="i"
+            class="small-list focus-area"
+            :focusable="true"
+            :focusScale="1.1"
+            @click="openVideo"
+          >
+            <div class="list-rank" v-if="item.level != ''">
+              <p class="rank-work">{{ item.level }}</p>
+            </div>
+            <div class="list-label">
+              <img :src="item.icon" v-if="item.icon != ''" />
+            </div>
+            <div class="img">
+              <img :src="item.url" class="default" />
+            </div>
+            <div class="list-word">
+              <div class="view-box">
+                <text-view
+                  class="text-view"
+                  :focusable="false"
+                  :select="true"
+                  maxLines="1"
+                  ellipsizeMode="2"
+                  >{{ item.name }}</text-view
+                >
+              </div>
+            </div>
+          </div> -->
         </div>
-        <!-- 竖排图片2  娱乐-->
+         <!-- 动态数据 -->
+        <!-- <div class="model-list" v-for="(item, i) in modelList" :key="i">
+          <p class="home-section-name">{{ item.title }}</p>
+          <div class="section display-flex flex-row">
+            <div
+              v-for="(data, i) in item.data"
+              :key="i"
+              class="small-list focus-area"
+              :focusable="true"
+              :focusScale="1.1"
+              @click="openVideo(data.type)"
+            >
+              <div class="img">
+                <img :src="data.url" class="default" />
+              </div>
+              <div class="list-word">
+                <div class="view-box">
+                  <text-view
+                    class="text-view"
+                    :focusable="false"
+                    :select="true"
+                    maxLines="1"
+                    ellipsizeMode="2"
+                    >{{ data.name }}</text-view
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> -->
+                <!-- 竖排图片2  娱乐-->
         <p class="home-section-name">娱乐</p>
         <div class="section display-flex flex-row">
           <div
@@ -351,7 +387,7 @@
           >
             <div class="img">
               <img
-                src="http://120.236.119.11:58011/uploads/images/2833a30bf4aeb53932da4004bb7a9f2f.png"
+                src="../../../static/img/home/yl1.png"
                 class="default"
               />
             </div>
@@ -363,7 +399,7 @@
                   :select="true"
                   maxLines="1"
                   ellipsizeMode="2"
-                  >忠实可靠的绅士柴犬</text-view
+                  >堡垒之夜乘船</text-view
                 >
               </div>
             </div>
@@ -375,7 +411,7 @@
           >
             <div class="img">
               <img
-                src="http://120.236.119.11:58011/uploads/images/5d9e2377180df5fa38ed1e197f9816ae.png"
+                src="../../../static/img/home/yl2.png"
                 class="default"
               />
             </div>
@@ -387,7 +423,7 @@
                   :select="true"
                   maxLines="1"
                   ellipsizeMode="2"
-                  >忠实可靠的绅士柴犬</text-view
+                  >堡垒之夜凯文魔方</text-view
                 >
               </div>
             </div>
@@ -399,7 +435,7 @@
           >
             <div class="img">
               <img
-                src="http://120.236.119.11:58011/uploads/images/b56d6c7d0940e79913a28986feb3e03c.png"
+                src="../../../static/img/home/yl3.png"
                 class="default"
               />
             </div>
@@ -411,7 +447,7 @@
                   :select="true"
                   maxLines="1"
                   ellipsizeMode="2"
-                  >忠实可靠的绅士柴犬</text-view
+                  >圣诞马术嘉年华</text-view
                 >
               </div>
             </div>
@@ -423,7 +459,7 @@
           >
             <div class="img">
               <img
-                src="http://120.236.119.11:58011/uploads/images/74fb730998e2ae25d6cf64a87013915b.png"
+                src="../../../static/img/home/yl4.png"
                 class="default"
               />
             </div>
@@ -435,7 +471,7 @@
                   :select="true"
                   maxLines="1"
                   ellipsizeMode="2"
-                  >忠实可靠的绅士柴犬</text-view
+                  >我的世界水下浮沉</text-view
                 >
               </div>
             </div>
@@ -447,7 +483,7 @@
           >
             <div class="img">
               <img
-                src="http://120.236.119.11:58011/ivod/jiangsuVR/img/home/more.png"
+                src="../../../static/img/home/more.png"
                 class="default"
               />
             </div>
@@ -467,7 +503,79 @@
           >
             <div class="img">
               <img
-                src="http://120.236.119.11:58011/uploads/images/38832c7d95d993ef6d6dba76fec99ec1.png"
+                src="../../../static/img/home/mc1.png"
+                class="default"
+              />
+            </div>
+            <div class="list-word">
+              <div class="view-box">
+                <text-view
+                  class="text-view"
+                  :focusable="false"
+                  :select="true"
+                  maxLines="1"
+                  ellipsizeMode="2"
+                  >两只小鹦鹉的日常</text-view
+                >
+              </div>
+            </div>
+          </div>
+          <div
+            class="small-list focus-area"
+            :focusable="true"
+            :focusScale="1.05"
+          >
+            <div class="img">
+              <img
+                src="../../../static/img/home/mc2.png"
+                class="default"
+              />
+            </div>
+            <div class="list-word">
+              <div class="view-box">
+                <text-view
+                  class="text-view"
+                  :focusable="false"
+                  :select="true"
+                  maxLines="1"
+                  ellipsizeMode="2"
+                  >高傲的大猫——白虎</text-view
+                >
+              </div>
+            </div>
+          </div>
+          <div
+            class="small-list focus-area"
+            :focusable="true"
+            :focusScale="1.05"
+          >
+            <div class="img">
+              <img
+                src="../../../static/img/home/mc3.png"
+                class="default"
+              />
+            </div>
+            <div class="list-word">
+              <div class="view-box">
+                <text-view
+                  class="text-view"
+                  :focusable="false"
+                  :select="true"
+                  maxLines="1"
+                  ellipsizeMode="2"
+                  >犀牛与鹈鹕的同居生活</text-view
+                >
+              </div>
+            </div>
+          </div>
+          <div
+            class="small-list focus-area"
+            :focusable="true"
+            :focusScale="1.05"
+          >
+            <div class="img">
+              <img
+                src="../../../static/img/home/mc4.png"
                 class="default"
               />
             </div>
@@ -491,79 +599,7 @@
           >
             <div class="img">
               <img
-                src="http://120.236.119.11:58011/uploads/images/396e3cb72b373b624d99b9fcd7c0ba6f.png"
-                class="default"
-              />
-            </div>
-            <div class="list-word">
-              <div class="view-box">
-                <text-view
-                  class="text-view"
-                  :focusable="false"
-                  :select="true"
-                  maxLines="1"
-                  ellipsizeMode="2"
-                  >忠实可靠的绅士柴犬</text-view
-                >
-              </div>
-            </div>
-          </div>
-          <div
-            class="small-list focus-area"
-            :focusable="true"
-            :focusScale="1.05"
-          >
-            <div class="img">
-              <img
-                src="http://120.236.119.11:58011/uploads/images/6d2dcd971ad44b02040d66eb8c8f4e24.png"
-                class="default"
-              />
-            </div>
-            <div class="list-word">
-              <div class="view-box">
-                <text-view
-                  class="text-view"
-                  :focusable="false"
-                  :select="true"
-                  maxLines="1"
-                  ellipsizeMode="2"
-                  >忠实可靠的绅士柴犬</text-view
-                >
-              </div>
-            </div>
-          </div>
-          <div
-            class="small-list focus-area"
-            :focusable="true"
-            :focusScale="1.05"
-          >
-            <div class="img">
-              <img
-                src="http://120.236.119.11:58011/uploads/images/dbcb643ab9c00717ef5306dbf89a2941.png"
-                class="default"
-              />
-            </div>
-            <div class="list-word">
-              <div class="view-box">
-                <text-view
-                  class="text-view"
-                  :focusable="false"
-                  :select="true"
-                  maxLines="1"
-                  ellipsizeMode="2"
-                  >忠实可靠的绅士柴犬</text-view
-                >
-              </div>
-            </div>
-          </div>
-          <div
-            class="small-list focus-area"
-            :focusable="true"
-            :focusScale="1.05"
-          >
-            <div class="img">
-              <img
-                src="http://120.236.119.11:58011/ivod/jiangsuVR/img/home/more.png"
+                src="../../../static/img/home/more.png"
                 class="default"
               />
             </div>
@@ -583,7 +619,7 @@
           >
             <div class="img">
               <img
-                src="http://120.236.119.11:58011/ivod/jiangsuVR/img/practise/1.jpg"
+                src="../../../static/img/home/yd1.jpg"
                 class="default"
               />
             </div>
@@ -595,7 +631,7 @@
                   :select="true"
                   maxLines="1"
                   ellipsizeMode="2"
-                  >忠实可靠的绅士柴犬</text-view
+                  >山地单车比赛</text-view
                 >
               </div>
             </div>
@@ -607,7 +643,7 @@
           >
             <div class="img">
               <img
-                src="http://120.236.119.11:58011/ivod/jiangsuVR/img/practise/1.jpg"
+                src="../../../static/img/home/yd1.jpg"
                 class="default"
               />
             </div>
@@ -619,7 +655,7 @@
                   :select="true"
                   maxLines="1"
                   ellipsizeMode="2"
-                  >忠实可靠的绅士柴犬</text-view
+                  >宝可梦过山车</text-view
                 >
               </div>
             </div>
@@ -631,7 +667,7 @@
           >
             <div class="img">
               <img
-                src="http://120.236.119.11:58011/ivod/jiangsuVR/img/practise/1.jpg"
+                src="../../../static/img/home/yd1.jpg"
                 class="default"
               />
             </div>
@@ -643,7 +679,7 @@
                   :select="true"
                   maxLines="1"
                   ellipsizeMode="2"
-                  >忠实可靠的绅士柴犬</text-view
+                  >极限滑板</text-view
                 >
               </div>
             </div>
@@ -655,7 +691,7 @@
           >
             <div class="img">
               <img
-                src="http://120.236.119.11:58011/uploads/images/e599d8977875a038ffa31085f4886ecf.png"
+                src="../../../static/img/home/yd2.png"
                 class="default"
               />
             </div>
@@ -667,7 +703,7 @@
                   :select="true"
                   maxLines="1"
                   ellipsizeMode="2"
-                  >忠实可靠的绅士柴犬</text-view
+                  >沙丘冲浪-罗尼.雷纳</text-view
                 >
               </div>
             </div>
@@ -679,7 +715,7 @@
           >
             <div class="img">
               <img
-                src="http://120.236.119.11:58011/ivod/jiangsuVR/img/home/more.png"
+                src="../../../static/img/home/more.png"
                 class="default"
               />
             </div>
@@ -699,7 +735,7 @@
           >
             <div class="img">
               <img
-                src="http://120.236.119.11:58011/uploads/images/d863acab94440edc5e450e700189fb3d.jpg"
+                src="../../../static/img/home/ly1.jpg"
                 class="default"
               />
             </div>
@@ -711,7 +747,7 @@
                   :select="true"
                   maxLines="1"
                   ellipsizeMode="2"
-                  >忠实可靠的绅士柴犬</text-view
+                  >香港风情篇1</text-view
                 >
               </div>
             </div>
@@ -723,7 +759,7 @@
           >
             <div class="img">
               <img
-                src="http://120.236.119.11:58011/uploads/images/352af22ffacb33f0cedb0cdff3323b8b.jpg"
+                src="../../../static/img/home/ly2.jpg"
                 class="default"
               />
             </div>
@@ -735,7 +771,7 @@
                   :select="true"
                   maxLines="1"
                   ellipsizeMode="2"
-                  >忠实可靠的绅士柴犬</text-view
+                  >印尼时光_monilith</text-view
                 >
               </div>
             </div>
@@ -747,7 +783,7 @@
           >
             <div class="img">
               <img
-                src="http://120.236.119.11:58011/uploads/images/0b520b38484a478171379ba319f130d7.png"
+                src="../../../static/img/home/ly3.png"
                 class="default"
               />
             </div>
@@ -759,7 +795,7 @@
                   :select="true"
                   maxLines="1"
                   ellipsizeMode="2"
-                  >忠实可靠的绅士柴犬</text-view
+                  >和海豚一起游泳</text-view
                 >
               </div>
             </div>
@@ -771,7 +807,7 @@
           >
             <div class="img">
               <img
-                src="http://120.236.119.11:58011/uploads/images/b5bd21315b6ffb5fd85540b540e683d9.png"
+                src="../../../static/img/home/ly4.png"
                 class="default"
               />
             </div>
@@ -783,7 +819,7 @@
                   :select="true"
                   maxLines="1"
                   ellipsizeMode="2"
-                  >忠实可靠的绅士柴犬</text-view
+                  >大溪地冲浪</text-view
                 >
               </div>
             </div>
@@ -795,7 +831,7 @@
           >
             <div class="img">
               <img
-                src="http://120.236.119.11:58011/ivod/jiangsuVR/img/home/more.png"
+                src="../../../static/img/home/more.png"
                 class="default"
               />
             </div>
@@ -815,7 +851,7 @@
           >
             <div class="img">
               <img
-                src="http://120.236.119.11:58011/uploads/images/38743d477d639d8dfb7dc446a12b52c8.png"
+                src="../../../static/img/home/vr1.png"
                 class="default"
               />
             </div>
@@ -827,7 +863,7 @@
                   :select="true"
                   maxLines="1"
                   ellipsizeMode="2"
-                  >忠实可靠的绅士柴犬</text-view
+                  >AKB48-持续的恋爱</text-view
                 >
               </div>
             </div>
@@ -839,7 +875,7 @@
           >
             <div class="img">
               <img
-                src="http://120.236.119.11:58011/uploads/images/77e661177ee3e4873b893144c1ddd2a5.png"
+                src="../../../static/img/home/vr2.png"
                 class="default"
               />
             </div>
@@ -851,7 +887,7 @@
                   :select="true"
                   maxLines="1"
                   ellipsizeMode="2"
-                  >忠实可靠的绅士柴犬</text-view
+                  >AKB48-因为喜欢你</text-view
                 >
               </div>
             </div>
@@ -863,7 +899,7 @@
           >
             <div class="img">
               <img
-                src="http://120.236.119.11:58011/uploads/images/7630d601056981e1776f89cca00d5994.png"
+                src="../../../static/img/home/vr3.png"
                 class="default"
               />
             </div>
@@ -875,7 +911,7 @@
                   :select="true"
                   maxLines="1"
                   ellipsizeMode="2"
-                  >忠实可靠的绅士柴犬</text-view
+                  >AKB48-Love Trip</text-view
                 >
               </div>
             </div>
@@ -887,7 +923,7 @@
           >
             <div class="img">
               <img
-                src="http://120.236.119.11:58011/uploads/images/3bf7cdd3a26c275fe0a43dc8031d9b78.png"
+                src="../../../static/img/home/vr4.png"
                 class="default"
               />
             </div>
@@ -899,7 +935,7 @@
                   :select="true"
                   maxLines="1"
                   ellipsizeMode="2"
-                  >忠实可靠的绅士柴犬</text-view
+                  >AKB48-闪亮的幸运</text-view
                 >
               </div>
             </div>
@@ -911,7 +947,7 @@
           >
             <div class="img">
               <img
-                src="http://120.236.119.11:58011/ivod/jiangsuVR/img/home/more.png"
+                src="../../../static/img/home/more.png"
                 class="default"
               />
             </div>
@@ -920,16 +956,20 @@
               </div> -->
           </div>
         </div>
+        <!-- 返回顶部 -->
         <div class="section display-flex flex-row">
-              <div class="home-bottom focus-area" :focusable="true"
-            :focusScale="1.02">
-      <p class="botom-word">我是有底线的~按我返回顶部</p>
-    </div>
+          <div
+            class="home-bottom focus-area"
+            :focusable="true"
+            :focusScale="1.05"
+            @click="scrollToTop"
+          >
+            <p class="botom-word">我是有底线的~按我返回顶部</p>
+          </div>
         </div>
       </div>
-      <p class="home-section-name" style="margin-bottom:550px;">天翼VR</p>
+      <p class="home-section-name" style="margin-bottom: 550px">天翼VR</p>
     </div>
-    
   </div>
 </template>
 
@@ -947,37 +987,198 @@ export default {
       slide1: slide1,
       selected: selected,
       isActive: 0,
-      recmondList:[
+      recmondList: [
         {
-          level:"Top1",
-          url:"http://120.236.119.11:58011/uploads/images/62473806fcfb449f6aba83fdc5653cc9.png",
-          name:"直播！大熊猫吃播"
+          level: "Top1",
+          url:
+            "http://120.236.119.11:58011/uploads/images/62473806fcfb449f6aba83fdc5653cc9.png",
+          name: "直播！大熊猫吃播",
         },
         {
-          level:"Top2",
-          url:"http://120.236.119.11:58011/uploads/images/6afd6f751ffed845e1b305687c4dba7b.png",
-          name:"AKB48 我们不战斗"
+          level: "Top2",
+          url:
+            "http://120.236.119.11:58011/uploads/images/6afd6f751ffed845e1b305687c4dba7b.png",
+          name: "AKB48 我们不战斗",
         },
         {
-          level:"Top3",
-          url:"http://120.236.119.11:58011/uploads/images/0ff0018702ee41fe0e6394ba32b7f0ae.png",
-          name:"堡垒之夜激斗"
+          level: "Top3",
+          url:
+            "http://120.236.119.11:58011/uploads/images/0ff0018702ee41fe0e6394ba32b7f0ae.png",
+          name: "堡垒之夜激斗",
         },
         {
-          level:"",
-          url:"http://120.236.119.11:58011/uploads/images/dbcb643ab9c00717ef5306dbf89a2941.png",
-          icon:"http://120.236.119.11:58011/ivod/jiangsuVR/img/home/recommend.png",
-          name:"我的世界逃离"
+          level: "",
+          url:
+            "http://120.236.119.11:58011/uploads/images/dbcb643ab9c00717ef5306dbf89a2941.png",
+          icon:
+            "http://120.236.119.11:58011/ivod/jiangsuVR/img/home/recommend.png",
+          name: "我的世界逃离",
         },
         {
-          level:"",
-          icon:"http://120.236.119.11:58011/ivod/jiangsuVR/img/home/hot.png",
-          url:"http://120.236.119.11:58011/uploads/images/8a3c8c8d44f6f4dca81dc8a11899be8f.png",
-          name:"忠诚可靠的绅士柴犬"
+          level: "",
+          icon: "http://120.236.119.11:58011/ivod/jiangsuVR/img/home/hot.png",
+          url:
+            "http://120.236.119.11:58011/uploads/images/8a3c8c8d44f6f4dca81dc8a11899be8f.png",
+          name: "忠诚可靠的绅士柴犬",
         },
       ],
-      imgBgColor:"http://120.236.119.11:58011/ivod/jiangsuVR/img/selected/recommend_big.png",
-      isImgSelect:null,
+      modelList: [
+        {
+          title: "娱乐",
+          data: [
+            {
+              url:
+                "http://120.236.119.11:58011/uploads/images/62473806fcfb449f6aba83fdc5653cc9.png",
+              name: "堡垒之夜之乘船",
+            },
+            {
+              url:
+                "http://120.236.119.11:58011/uploads/images/5d9e2377180df5fa38ed1e197f9816ae.png",
+              name: "堡垒之夜",
+            },
+            {
+              url:
+                "http://120.236.119.11:58011/uploads/images/b56d6c7d0940e79913a28986feb3e03c.png",
+              name: "圣诞马术嘉年华",
+            },
+            {
+              url:
+                "http://120.236.119.11:58011/uploads/images/74fb730998e2ae25d6cf64a87013915b.png",
+              name: "我的世界",
+            },
+            {
+              url:
+                "http://120.236.119.11:58011/ivod/jiangsuVR/img/home/more.png",
+              name: "",
+              type: "more",
+            },
+          ],
+        },
+        {
+          title: "萌宠",
+          data: [
+            {
+              url:
+                "http://120.236.119.11:58011/uploads/images/38832c7d95d993ef6d6dba76fec99ec1.png",
+              name: "两只小鹦鹉日常",
+            },
+            {
+              url:
+                "http://120.236.119.11:58011/uploads/images/396e3cb72b373b624d99b9fcd7c0ba6f.png",
+              name: "高傲的大猫",
+            },
+            {
+              url:
+                "http://120.236.119.11:58011/uploads/images/6d2dcd971ad44b02040d66eb8c8f4e24.png",
+              name: "犀牛与鹧鸪的同居生活",
+            },
+            {
+              url:
+                "http://120.236.119.11:58011/uploads/images/dbcb643ab9c00717ef5306dbf89a2941.png",
+              name: "忠诚可靠的柴犬绅士",
+            },
+            {
+              url:
+                "http://120.236.119.11:58011/ivod/jiangsuVR/img/home/more.png",
+              name: "",
+              type: "more",
+            },
+          ],
+        },
+        {
+          title: "运动",
+          data: [
+            {
+              url:
+                "http://120.236.119.11:58011/ivod/jiangsuVR/img/practise/1.jpg",
+              name: "山地单车比赛",
+            },
+            {
+              url:
+                "http://120.236.119.11:58011/ivod/jiangsuVR/img/practise/1.jpg",
+              name: "宝可梦过山车",
+            },
+            {
+              url:
+                "http://120.236.119.11:58011/ivod/jiangsuVR/img/practise/1.jpg",
+              name: "极限滑板",
+            },
+            {
+              url:
+                "http://120.236.119.11:58011/uploads/images/e599d8977875a038ffa31085f4886ecf.png",
+              name: "沙丘冲浪",
+            },
+            {
+              url:
+                "http://120.236.119.11:58011/ivod/jiangsuVR/img/home/more.png",
+              name: "",
+              type: "more",
+            },
+          ],
+        },
+        {
+          title: "旅游",
+          data: [
+            {
+              url:
+                "http://120.236.119.11:58011/uploads/images/d863acab94440edc5e450e700189fb3d.jpg",
+              name: "香港风情篇",
+            },
+            {
+              url:
+                "http://120.236.119.11:58011/uploads/images/352af22ffacb33f0cedb0cdff3323b8b.jpg",
+              name: "印尼风光",
+            },
+            {
+              url:
+                "http://120.236.119.11:58011/uploads/images/0b520b38484a478171379ba319f130d7.png",
+              name: "和海豚一起游泳",
+            },
+            {
+              url:
+                "http://120.236.119.11:58011/uploads/images/b5bd21315b6ffb5fd85540b540e683d9.png",
+              name: "大栖息地冲浪",
+            },
+            {
+              url:
+                "http://120.236.119.11:58011/ivod/jiangsuVR/img/home/more.png",
+              name: "",
+              type: "more",
+            },
+          ],
+        },
+        {
+          title: "天翼VR",
+          data: [
+            {
+              url:
+                "http://120.236.119.11:58011/uploads/images/38743d477d639d8dfb7dc446a12b52c8.png",
+              name: "AKB48-持续的恋爱",
+            },
+            {
+              url:
+                "http://120.236.119.11:58011/uploads/images/77e661177ee3e4873b893144c1ddd2a5.png",
+              name: "AKB48-因为喜欢你",
+            },
+            {
+              url:
+                "http://120.236.119.11:58011/uploads/images/3bf7cdd3a26c275fe0a43dc8031d9b78.png",
+              name: "AKB48-Love Trip",
+            },
+            {
+              url:
+                "http://120.236.119.11:58011/uploads/images/7630d601056981e1776f89cca00d5994.png",
+              name: "AKB48- 闪亮的幸运",
+            },
+            {
+              url:
+                "http://120.236.119.11:58011/ivod/jiangsuVR/img/home/more.png",
+              name: "",
+              type: "more",
+            },
+          ],
+        },
+      ],
       swiperUrl:
         "http://120.236.119.11:58011/uploads/images/c7e55a1ba3835f2f142c722b901020c1.png",
       gradientBackground: {
@@ -999,16 +1200,64 @@ export default {
       this.isShowBg = index;
       console.log("获取焦点啦");
     },
-    foncusOnImgBg(i){
-      console.log("li",i)
-      this.isImgSelect=i;
+    //跳转到视频页面
+    openVideo(type) {
+      console.log("sjsjs");
+      if (type == "more") {
+        let url = "/video/moreList";
+        Vue.Native.callNative("MiniModule", "execute", {
+          action: "__AC_NEW_TAB__",
+          data: JSON.stringify({ url }),
+        });
+      } else {
+        let url = "/video/playPage";
+        Vue.Native.callNative("MiniModule", "execute", {
+          action: "__AC_NEW_TAB__",
+          data: JSON.stringify({ url }),
+        });
+      }
+    },
+    //跳转到排行榜
+    routerToRank() {
+      let url = "/video/rankList";
+      Vue.Native.callNative("MiniModule", "execute", {
+        action: "__AC_NEW_TAB__",
+        data: JSON.stringify({ url }),
+      });
     },
     //跳转到观看历史
-    routerToHistory(){
+    routerToHistory() {
       // console.log("hello ligen")
-      let url="/video/history";
-      Vue.Native.callNative('MiniModule', 'execute', { action: '__AC_NEW_TAB__', data: JSON.stringify({ url }) });
-    }
+      let url = "/video/history";
+      Vue.Native.callNative("MiniModule", "execute", {
+        action: "__AC_NEW_TAB__",
+        data: JSON.stringify({ url }),
+      });
+    },
+    //跳转到帮助
+    routerToFeedback() {
+      let url = "/video/feedback";
+      Vue.Native.callNative("MiniModule", "execute", {
+        action: "__AC_NEW_TAB__",
+        data: JSON.stringify({ url }),
+      });
+    },
+    onScroll(evt) {
+      console.log("lilili", evt);
+      evt.stopPropagation(); // 这个事件触发比较频繁，最好阻止一下冒泡。
+      this.scrollPos = {
+        top: evt.offsetY,
+        left: evt.offsetX,
+      };
+      // 初始化时曝光上报
+      this.exposureReport(evt.offsetY);
+    },
+    //返回顶部
+    scrollToTop() {
+      console.log("absbsb");
+      const { list } = this.$refs;
+      list.scrollToIndex(0, 0);
+    },
   },
   mounted() {
     this.app = getApp();
@@ -1375,14 +1624,14 @@ export default {
 .same {
   border: 0px;
 }
-.home-bottom{
+.home-bottom {
   width: 1780px;
   height: 61px;
   line-height: 61px;
   background-color: purple;
   margin-bottom: 50px;
 }
-.botom-word{
+.botom-word {
   width: 1780px;
   height: 61px;
   line-height: 61px;

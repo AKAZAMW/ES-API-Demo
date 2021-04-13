@@ -3,6 +3,7 @@ import history from './history';
 import playPage from './playPage';
 import rankList from './rankList';
 import feedback from './feedback';
+import morelist from './morelist';
 
 const hdVideo = {
   home: {
@@ -24,6 +25,10 @@ const hdVideo = {
   feedback: {
     name: '反馈页面',
     component: feedback,
+  },
+  moreList: {
+    name: '更多页面',
+    component: morelist,
   },
 };
 
