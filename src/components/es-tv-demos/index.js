@@ -8,6 +8,9 @@ import divGradient from './div-gradient-bg.vue';
 import imgTransition from './img-transition.vue';
 import imgQr from './img-qr.vue';
 import videoView from './video.vue';
+import home from './home.vue';
+import history from './history.vue';
+
 
 const demos = {
   focusBasic: {
@@ -50,7 +53,14 @@ const demos = {
     name: '视频组件',
     component: videoView,
   },
-
+  home: {
+    name: '首页',
+    component: home,
+  },
+  history: {
+    name: '观看历史',
+    component: history,
+  }
 };
 
 
