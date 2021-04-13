@@ -1,17 +1,17 @@
 <template>
   <div class='container2'>
-    <div style="margin-left: 80px;">
+    <div>
       <div class="rank_header" :opacity="0.3"></div>
       <div style="flex-direction: row;margin-left: 40px;margin-top: 20px;height: 80px;">
-        <img style="width: 36px;height: 36px;" src="http://120.236.119.11:58011/ivod/jiangsuVR/img/home/btn_icon2.png">
+        <img style="width: 36px;height: 36px;" src="../../../static/img/btn_icon2.png">
         <p style="font-size: 30px;color: white;margin-left: 10px;font-family: 'Microsoft YaHei';">排行榜</p>
       </div>
     </div>
-    <div style="flex-direction: row" v-for="data in dataList">
-      <div v-for="d in data"  :focusable="true" :requestFocus="d.rankIndex===1" @focus="onFocus" :index="d.rankIndex" :class="{rank_container:true,active:currentIndex===d.rankIndex}">
+    <div style="flex-direction: row;margin-left: 80px;" v-for="data in dataList">
+      <div v-for="d in data"  :focusable="true" :requestFocus="d.rankIndex===1" @focus="onFocus" @click="routeTo('/video/playPage')"  :index="d.rankIndex" :class="{rank_container:true,active:currentIndex===d.rankIndex}">
         <div class="rank_content">
           <div class="rank_rank">
-            <img src="http://120.236.119.11:58011/ivod/jiangsuVR/img/rank/rank_bg.png">
+            <img src="../../../static/img/rank_bg.png">
             <p style="font-size: 28px;color: white;margin-top:-46px;margin-left: 10px;">{{d.rankIndex}}</p>
           </div>
           <p class="rank_title">{{d.title}}</p>
@@ -67,9 +67,11 @@
       onFocus(e) {
         if(e.isFocused) {
           this.currentIndex = e.target.attributes.index;
-          console.log('this.currentIndex='+this.currentIndex)
         }
-      }
+      },
+      routeTo(url) {
+        Vue.Native.callNative('MiniModule', 'execute', { action: '__AC_NEW_TAB__', data: JSON.stringify({ url }) });
+      },
     },
   };
 </script>
@@ -96,7 +98,6 @@
     margin-top:26px;
     margin-left: 56px;
     border-radius: 5px;
-    overflow: hidden;
     /*border-color: red;*/
     /*border-width: 2px;*/
   }

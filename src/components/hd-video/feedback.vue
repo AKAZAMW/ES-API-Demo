@@ -146,7 +146,6 @@
         }, 3000);
       },
       routeTo(url) {
-        // this.$router.push(url)
         Vue.Native.callNative('MiniModule', 'execute', { action: '__AC_NEW_TAB__', data: JSON.stringify({ url }) });
       },
     }

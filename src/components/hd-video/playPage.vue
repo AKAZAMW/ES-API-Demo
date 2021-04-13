@@ -52,11 +52,18 @@
         playBtnFlag:false,
         videoLoading: true,
         currentVideoIndex:0,
-        videoUrl:'https://vdn.vzuu.com/HD/v3_d741bdc6-6fa3-11e9-a17e-0a580a44df77.mp4?disable_local_cache=1&auth_key=1618279660-0-0-e969a072f1fcf8c441318c2c5dca8109&f=mp4&bu=http-com&expiration=1618279660&v=ali',
-        videoList:['https://vdn.vzuu.com/HD/v3_d741bdc6-6fa3-11e9-a17e-0a580a44df77.mp4?disable_local_cache=1&auth_key=1618279660-0-0-e969a072f1fcf8c441318c2c5dca8109&f=mp4&bu=http-com&expiration=1618279660&v=ali',
-          'https://vdn.vzuu.com/HD/b6194bd4-d521-11ea-bb7e-a6ee87533986.mp4?disable_local_cache=1&auth_key=1618281403-0-0-5f11366f8013094178e8b2268e9b663e&f=mp4&bu=http-com&expiration=1618281403&v=ali',
-          'https://vdn.vzuu.com/HD/e7dca95c-8f3e-11e8-8d8e-0242ac112a1b.mp4?disable_local_cache=1&auth_key=1618281530-0-0-bccc07a44b202a293818247a39af8e03&f=mp4&bu=http-com&expiration=1618281530&v=ali',
-          'https://vdn.vzuu.com/HD/310b3bc4-d4f0-11e8-a75a-0242ac112a07.mp4?disable_local_cache=1&auth_key=1618281823-0-0-268074ccaeb006d73fa5d3297e36d634&f=mp4&bu=http-com&expiration=1618281823&v=ali',
+        videoUrl:'https://vd3.bdstatic.com/mda-jf8u3ypduredhch1/sc/mda-jf8u3ypduredhch1.mp4?v_from_s=nj_haokan_4469&auth_key=1618285987-0-0-1d81ba2e0b92401c5310bee58759c259&bcevod_channel=searchbox_feed&pd=1&pt=3&abtest=',
+        videoList:[
+          'https://vd3.bdstatic.com/mda-jf8u3ypduredhch1/sc/mda-jf8u3ypduredhch1.mp4?v_from_s=nj_haokan_4469&auth_key=1618285987-0-0-1d81ba2e0b92401c5310bee58759c259&bcevod_channel=searchbox_feed&pd=1&pt=3&abtest=',
+          'https://vd2.bdstatic.com/mda-kaduxr1qnqcmeu0m/v1-cae/sc/mda-kaduxr1qnqcmeu0m.mp4?v_from_s=nj_haokan_4469&auth_key=1618285356-0-0-219ac591b174e2708a3d6926413f77da&bcevod_channel=searchbox_feed&pd=1&pt=3&abtest=',
+          'https://vd2.bdstatic.com/mda-kd1y7cctqu28wcrx/sc/mda-kd1y7cctqu28wcrx.mp4?v_from_s=nj_haokan_4469&auth_key=1618285986-0-0-633474a5155ca479663fceeb1cfbe3f2&bcevod_channel=searchbox_feed&pd=1&pt=3&abtest=',
+          'https://vd2.bdstatic.com/mda-kh0pugd4siga71x5/cae_h264_clips/mda-kh0pugd4siga71x5.mp4?auth_key=1618285983-0-0-23db17fbb3d46f34da6a6f63fae79d5c&bcevod_channel=searchbox_feed&pd=1&pt=3&abtest=',
+          'https://vd2.bdstatic.com/mda-kkigetd72bmfgvks/sc/cae_h264_clips/1605758524/mda-kkigetd72bmfgvks.mp4?auth_key=1618285978-0-0-4ee924f07afb19a7335d94eb5452f150&bcevod_channel=searchbox_feed&pd=1&pt=3&abtest=',
+          'https://vd2.bdstatic.com/mda-kcw6z1adci8ca6i5/sc/mda-kcw6z1adci8ca6i5.mp4?v_from_s=nj_haokan_4469&auth_key=1618285975-0-0-3b7f7528b8248eff7c0f5724e54f8950&bcevod_channel=searchbox_feed&pd=1&pt=3&abtest=',
+          'https://vd2.bdstatic.com/mda-kadnyjfdfmrxmqmc/sc/mda-kadnyjfdfmrxmqmc.mp4?v_from_s=nj_haokan_4469&auth_key=1618285972-0-0-5fee2659405a6b9134dd5a1aaa2b9042&bcevod_channel=searchbox_feed&pd=1&pt=3&abtest=',
+          'https://vd2.bdstatic.com/mda-ma6mpx9fys57buye/v1-cae/sc/mda-ma6mpx9fys57buye.mp4?v_from_s=nj_haokan_4469&auth_key=1618285966-0-0-a6c7eda735b040dda914311754d0540f&bcevod_channel=searchbox_feed&pd=1&pt=3&abtest=',
+          'https://vd2.bdstatic.com/mda-macnxgupu2urng8t/v1-cae/sc/mda-macnxgupu2urng8t.mp4?v_from_s=nj_haokan_4469&auth_key=1618285963-0-0-f14d4403ad1a96eefe15e11fc7887bf7&bcevod_channel=searchbox_feed&pd=1&pt=3&abtest=',
+          'https://vd2.bdstatic.com/mda-mc3itznxf9qmxd6c/v1-cae/sc/mda-mc3itznxf9qmxd6c.mp4?v_from_s=nj_haokan_4469&auth_key=1618285961-0-0-82d529f917ee4dc1a25664588e48882a&bcevod_channel=searchbox_feed&pd=1&pt=3&abtest=',
         ]
       };
     },
@@ -70,6 +77,8 @@
       },
       playVideo(url,index){
         if(this.currentVideoIndex !== index) {
+          this.$refs.video.stop();
+          this.showLoading();
           this.playPauseText = '暂停';
           this.playBtnFlag = false;
           this.videoLoading = true;
