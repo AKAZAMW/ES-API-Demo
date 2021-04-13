@@ -33,9 +33,11 @@
     </div>
     <div style="margin-left: 80px;">
       <p style="font-size: 24px;color: white;margin-top: 20px;">剧集列表</p>
-      <div style="flex-direction: row;margin-top: 20px;">
-        <div v-for="(url,index) in videoList" :class="{video_item:true,active:currentVideoIndex===index}"  :focusable=true :focusScale="1.2" @click="playVideo(url, index)"><p style="font-size: 30px;color: white;">{{index+1}}</p></div>
-      </div>
+      <ul style="flex-direction: row;margin-top: 20px;" horizontal>
+        <li v-for="(url,index) in videoList"  :focusable=true :focusScale="1.2" @click="playVideo(url, index)" style="float:left;">
+          <div class="video_item"><p style="font-size: 30px;color: white;">{{index+1}}</p></div>
+        </li>
+      </ul>
     </div>
   </div>
 

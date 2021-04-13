@@ -11,8 +11,11 @@
         <p class="feature-title">天翼高清 VR全景</p>
       </li>
       <li class="feature-item" :focusable=false>
-        <div v-for="(feature, index) in videoList" @focus="onFocus" :key="feature.id" :focusable=true :focusScale="1.1" :requestFocus="index === 0" @click="routeTo(`/video/${feature.id}`)" class="button">
-          <p duplicateParentState>{{ feature.name }}</p>
+<!--        <div v-for="(feature, index) in videoList" @focus="onFocus" :key="feature.id" :focusable=true :focusScale="1.1" :requestFocus="index === 0" @click="routeTo(`/video/${feature.id}`)" class="button">-->
+<!--          <p duplicateParentState>{{ feature.name }}</p>-->
+<!--        </div>-->
+        <div @focus="onFocus" :focusable=true :focusScale="1.1" :requestFocus="true" @click="routeTo(`/video/home`)" class="button">
+          <p duplicateParentState>首页</p>
         </div>
       </li>
       <li :focusable=false>

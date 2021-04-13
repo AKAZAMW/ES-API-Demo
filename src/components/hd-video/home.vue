@@ -146,6 +146,7 @@
             :focusScale="1.1"
             @click="openVideo"
             :requestFocus="true"
+            ref="swiperPic"
           >
             <div class="img">
               <img :src="swiperUrl" class="default" />
@@ -913,7 +914,7 @@
             class="home-bottom focus-area"
             :focusable="true"
             :focusScale="1.05"
-            @click="scrollPage(0)"
+            @click="goToTop"
           >
             <p class="botom-word">我是有底线的~按我返回顶部</p>
           </div>
@@ -1289,6 +1290,12 @@ export default {
         action: "__AC_NEW_TAB__",
         data: JSON.stringify({ url }),
       });
+    },
+    goToTop() {
+      this.scrollPage(0);
+      setTimeout(() => {
+        Vue.Native.callUIFunction(this.$refs.swiperPic, 'requestFocus');
+      }, 100);
     },
     scrollPage(top) {
       // 因为布局问题，浏览器内 flex: 1 后也会超出窗口尺寸高度，所以这么滚是不行的。
