@@ -1,125 +1,196 @@
 <template>
   <div class="container2">
     <div class="head-name flex-row">
-      <img
-        src="../../../static/img/btn_icon1.png"
-      />
+      <img src="../../../static/img/btn_icon1.png" />
       <p class="his-word">观看历史</p>
     </div>
     <!-- 历史加载区域 -->
     <div id="div-clumn" class="display-flex flex-column">
       <div class="page-loading">
         <div class="display-flex flex-row his-content">
-          <div class="his-list" :focusable="true" :focusScale="1.1">
-            <img
-              src="../../../static/img/history/his1.png"
-            />
+          <div
+            class="his-list"
+            :focusable="true"
+            :focusScale="1.1"
+            :requestFocus="true"
+            @click="openVideo"
+          >
+            <img src="../../../static/img/history/his1.png" />
             <p class="list-word">VR旅游</p>
           </div>
-          <div class="his-list" :focusable="true" :focusScale="1.1">
-            <img
-              src="../../../static/img/history/his2.png"
-            />
+          <div
+            class="his-list"
+            :focusable="true"
+            :focusScale="1.1"
+            @click="openVideo"
+          >
+            <img src="../../../static/img/history/his2.png" />
             <p class="list-word">赛车比赛</p>
           </div>
-          <div class="his-list" :focusable="true" :focusScale="1.1">
-            <img
-              src="../../../static/img/history/his3.png"
-            />
+          <div
+            class="his-list"
+            :focusable="true"
+            :focusScale="1.1"
+            @click="openVideo"
+          >
+            <img src="../../../static/img/history/his3.png" />
             <p class="list-word">动物园游园会</p>
           </div>
-          <div class="his-list" :focusable="true" :focusScale="1.1">
-            <img
-              src="../../../static/img/history/his4.png"
-            />
+          <div
+            class="his-list"
+            :focusable="true"
+            :focusScale="1.1"
+            @click="openVideo"
+          >
+            <img src="../../../static/img/history/his4.png" />
             <p class="list-word">VR娱乐</p>
           </div>
-          <div class="his-list" :focusable="true" :focusScale="1.1">
-            <img
-              src="../../../static/img/history/his5.png"
-            />
+          <div
+            class="his-list"
+            :focusable="true"
+            :focusScale="1.1"
+            @click="openVideo"
+          >
+            <img src="../../../static/img/history/his5.png" />
             <p class="list-word">堡垒之夜第二季</p>
           </div>
         </div>
         <div class="display-flex flex-row his-content">
-          <div class="his-list" :focusable="true" :focusScale="1.1">
-            <img
-              src="../../../static/img/history/his6.png"
-            />
-            <div class="list-word" >
-              <div class="view-box"><text-view  class="text-view" :focusable=false :select="true"  maxLines="1" ellipsizeMode="3"  >刺激过山车第二季</text-view></div>
+          <div
+            class="his-list"
+            :focusable="true"
+            :focusScale="1.1"
+            @click="openVideo"
+          >
+            <img src="../../../static/img/history/his6.png" />
+            <div class="list-word">
+              <div class="view-box">
+                <text-view
+                  class="text-view"
+                  :focusable="false"
+                  :select="true"
+                  maxLines="1"
+                  ellipsizeMode="3"
+                  >刺激过山车第二季</text-view
+                >
               </div>
+            </div>
           </div>
-          <div class="his-list" :focusable="true" :focusScale="1.1">
-            <img
-              src="../../../static/img/history/his7.png"
-            />
+          <div
+            class="his-list"
+            :focusable="true"
+            :focusScale="1.1"
+            @click="openVideo"
+          >
+            <img src="../../../static/img/history/his7.png" />
             <p class="list-word">AKB48</p>
           </div>
-          <div class="his-list" :focusable="true" :focusScale="1.1">
-            <img
-              src="../../../static/img/history/his8.jpg"
-            />
+          <div
+            class="his-list"
+            :focusable="true"
+            :focusScale="1.1"
+            @click="openVideo"
+          >
+            <img src="../../../static/img/history/his8.jpg" />
             <p class="list-word">动物世界</p>
           </div>
-          <div class="his-list" :focusable="true" :focusScale="1.1">
-            <img
-              src="../../../static/img/history/his9.png"
-            />
+          <div
+            class="his-list"
+            :focusable="true"
+            :focusScale="1.1"
+            @click="openVideo"
+          >
+            <img src="../../../static/img/history/his9.png" />
             <p class="list-word">VR纪录片</p>
           </div>
-          <div class="his-list" :focusable="true" :focusScale="1.1">
-            <img
-              src="../../../static/img/history/his10.png"
-            />
+          <div
+            class="his-list"
+            :focusable="true"
+            :focusScale="1.1"
+            @click="openVideo"
+          >
+            <img src="../../../static/img/history/his10.png" />
             <p class="list-word">我的世界第一季</p>
           </div>
         </div>
         <div class="display-flex flex-row his-content">
-          <div class="his-list" :focusable="true" :focusScale="1.1">
-            <img
-              src="../../../static/img/history/his11.png"
-            />
+          <div
+            class="his-list"
+            :focusable="true"
+            :focusScale="1.1"
+            @click="openVideo"
+          >
+            <img src="../../../static/img/history/his11.png" />
             <p class="list-word">拍刀</p>
           </div>
-          <div class="his-list" :focusable="true" :focusScale="1.1">
-            <img
-              src="../../../static/img/history/his12.png"
-            />
+          <div
+            class="his-list"
+            :focusable="true"
+            :focusScale="1.1"
+            @click="openVideo"
+          >
+            <img src="../../../static/img/history/his12.png" />
             <p class="list-word">宠物美容院</p>
           </div>
-          <div class="his-list" :focusable="true" :focusScale="1.1">
-            <img
-              src="../../../static/img/history/his13.png"
-            />
-            <div class="list-word" >
-              <div class="view-box"><text-view  class="text-view" :focusable=false :select="true"  maxLines="1" ellipsizeMode="3"  >刺激过山车第二季</text-view></div>
+          <div
+            class="his-list"
+            :focusable="true"
+            :focusScale="1.1"
+            @click="openVideo"
+          >
+            <img src="../../../static/img/history/his13.png" />
+            <div class="list-word">
+              <div class="view-box">
+                <text-view
+                  class="text-view"
+                  :focusable="false"
+                  :select="true"
+                  maxLines="1"
+                  ellipsizeMode="3"
+                  >刺激过山车第二季</text-view
+                >
               </div>
+            </div>
           </div>
-          <div class="his-list" :focusable="true" :focusScale="1.1">
-            <img
-              src="../../../static/img/history/his14.png"
-            />
+          <div
+            class="his-list"
+            :focusable="true"
+            :focusScale="1.1"
+            @click="openVideo"
+          >
+            <img src="../../../static/img/history/his14.png" />
             <p class="list-word">VR体育</p>
           </div>
-          <div class="his-list" :focusable="true" :focusScale="1.1">
-            <img
-              src="../../../static/img/history/his15.png"
-            />
+          <div
+            class="his-list"
+            :focusable="true"
+            :focusScale="1.1"
+            @click="openVideo"
+          >
+            <img src="../../../static/img/history/his15.png" />
             <p class="list-word">侏罗纪公园</p>
           </div>
         </div>
-        <div class="display-flex flex-row his-content" style="margin-bottom:100px;">
-          <div class="his-list" :focusable="true" :focusScale="1.1">
-            <img
-              src="../../../static/img/history/his17.png"
-            />
+        <div
+          class="display-flex flex-row his-content"
+          style="margin-bottom: 100px"
+        >
+          <div
+            class="his-list"
+            :focusable="true"
+            :focusScale="1.1"
+            @click="openVideo"
+          >
+            <img src="../../../static/img/history/his17.png" />
             <p class="list-word">堡垒之夜第一季</p>
           </div>
-          <div class="his-list" :focusable="true" :focusScale="1.1">
-            <img
-              src="../../../static/img/history/his16.jpg"
-            />
+          <div
+            class="his-list"
+            :focusable="true"
+            :focusScale="1.1"
+            @click="openVideo"
+          >
+            <img src="../../../static/img/history/his16.jpg" />
             <p class="list-word">过山车</p>
           </div>
         </div>
@@ -146,6 +217,13 @@ export default {
         "DeviceEventModule",
         "invokeDefaultBackPressHandler"
       );
+    },
+    openVideo() {
+      let url = "/video/playPage";
+      Vue.Native.callNative("MiniModule", "execute", {
+        action: "__AC_NEW_TAB__",
+        data: JSON.stringify({ url }),
+      });
     },
     clickView() {
       console.log("hello");
@@ -182,12 +260,11 @@ export default {
   font-size: 45px;
   line-height: 130px;
 }
- #div-clumn {
-    flex: 1;
-    overflow-y: scroll;
-    /* padding: 50px; */
-    
-  }
+#div-clumn {
+  flex: 1;
+  overflow-y: scroll;
+  /* padding: 50px; */
+}
 .page-loading {
   position: relative;
   width: 1920px;
@@ -230,13 +307,12 @@ export default {
   flex-direction: column;
 }
 .view-box {
-    width: 280px;
-    padding: 10px;
-
-  }
- .view-box .text-view {
-    height: 50px;
-    color: #fff;
+  width: 280px;
+  padding: 10px;
+}
+.view-box .text-view {
+  height: 50px;
+  color: #fff;
   font-size: 40px;
-  }
+}
 </style>

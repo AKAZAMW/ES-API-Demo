@@ -10,7 +10,7 @@
     <div id="div-clumn" class="display-flex flex-column">
       <div class="page-loading">
         <div class="display-flex flex-row his-content">
-          <div class="his-list" :focusable="true" :focusScale="1.1">
+          <div class="his-list" :focusable="true" :focusScale="1.1" @click="openVideo" :requestFocus="true">
             <img
               src="../../../static/img/history/his6.png"
             />
@@ -18,7 +18,7 @@
               <div class="view-box"><text-view  class="text-view" :focusable=false :select="true"  maxLines="1" ellipsizeMode="3"  >刺激过山车第一季</text-view></div>
               </div>
           </div>
-          <div class="his-list" :focusable="true" :focusScale="1.1">
+          <div class="his-list" :focusable="true" :focusScale="1.1" @click="openVideo">
             <img
               src="../../../static/img/history/his13.png"
             />
@@ -26,7 +26,7 @@
               <div class="view-box"><text-view  class="text-view" :focusable=false :select="true"  maxLines="1" ellipsizeMode="3"  >刺激过山车第二季</text-view></div>
               </div>
           </div>
-          <div class="his-list" :focusable="true" :focusScale="1.1">
+          <div class="his-list" :focusable="true" :focusScale="1.1" @click="openVideo">
             <img
               src="../../../static/img/history/his17.png"
             />
@@ -34,7 +34,7 @@
               <div class="view-box"><text-view  class="text-view" :focusable=false :select="true"  maxLines="1" ellipsizeMode="3"  >堡垒之夜第一季</text-view></div>
               </div>
           </div>
-          <div class="his-list" :focusable="true" :focusScale="1.1">
+          <div class="his-list" :focusable="true" :focusScale="1.1" @click="openVideo">
             <img
               src="../../../static/img/history/his5.png"
             />
@@ -42,7 +42,7 @@
               <div class="view-box"><text-view  class="text-view" :focusable=false :select="true"  maxLines="1" ellipsizeMode="3"  >堡垒之夜第二季</text-view></div>
               </div>
           </div>
-          <div class="his-list" :focusable="true" :focusScale="1.1">
+          <div class="his-list" :focusable="true" :focusScale="1.1" @click="openVideo">
             <img
               src="../../../static/img/history/gggs.png"
             />
@@ -52,7 +52,7 @@
           </div>
         </div>
         <div class="display-flex flex-row his-content">
-          <div class="his-list" :focusable="true" :focusScale="1.1">
+          <div class="his-list" :focusable="true" :focusScale="1.1" @click="openVideo">
             <img
               src="../../../static/img/history/his11.png"
             />
@@ -60,13 +60,13 @@
               <div class="view-box"><text-view  class="text-view" :focusable=false :select="true"  maxLines="1" ellipsizeMode="3"  >拍刀</text-view></div>
               </div>
           </div>
-          <div class="his-list" :focusable="true" :focusScale="1.1">
+          <div class="his-list" :focusable="true" :focusScale="1.1" @click="openVideo">
             <img
               src="../../../static/img/history/his2.png"
             />
             <p class="list-word">赛车比赛</p>
           </div>
-          <div class="his-list" :focusable="true" :focusScale="1.1">
+          <div class="his-list" :focusable="true" :focusScale="1.1" @click="openVideo">
             <img
               src="../../../static/img/history/his10.png"
             />
@@ -74,7 +74,7 @@
               <div class="view-box"><text-view  class="text-view" :focusable=false :select="true"  maxLines="1" ellipsizeMode="3"  >我的世界第一季</text-view></div>
               </div>
           </div>
-          <div class="his-list" :focusable="true" :focusScale="1.1">
+          <div class="his-list" :focusable="true" :focusScale="1.1" @click="openVideo">
             <img
               src="../../../static/img/history/his15.png"
             />
@@ -82,7 +82,7 @@
               <div class="view-box"><text-view  class="text-view" :focusable=false :select="true"  maxLines="1" ellipsizeMode="3"  >侏罗纪公园</text-view></div>
               </div>
           </div>
-          <div class="his-list" :focusable="true" :focusScale="1.1">
+          <div class="his-list" :focusable="true" :focusScale="1.1" @click="openVideo">
             <img
               src="../../../static/img/history/his9.png"
             />
@@ -92,7 +92,7 @@
           </div>
         </div>
         <div class="display-flex flex-row his-content" style="margin-bottom:100px;">
-          <div class="his-list" :focusable="true" :focusScale="1.1">
+          <div class="his-list" :focusable="true" :focusScale="1.1" @click="openVideo">
             <img
               src="../../../static/img/history/his4.png"
             />
@@ -124,6 +124,13 @@ export default {
         "DeviceEventModule",
         "invokeDefaultBackPressHandler"
       );
+    },
+    openVideo() {
+      let url = "/video/playPage";
+      Vue.Native.callNative("MiniModule", "execute", {
+        action: "__AC_NEW_TAB__",
+        data: JSON.stringify({ url }),
+      });
     },
     clickView() {
       console.log("hello");

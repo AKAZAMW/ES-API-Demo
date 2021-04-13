@@ -10,7 +10,7 @@
     <div id="div-clumn" class="display-flex flex-column">
       <div class="page-loading">
         <div class="display-flex flex-row his-content">
-          <div class="his-list" :focusable="true" :focusScale="1.1">
+          <div class="his-list" :focusable="true" :focusScale="1.1" :requestFocus="true"  @click="openVideo">
             <img
               src="../../../static/img/history/his6.png"
             />
@@ -18,7 +18,7 @@
               <div class="view-box"><text-view  class="text-view" :focusable=false :select="true"  maxLines="1" ellipsizeMode="3"  >刺激过山车第一季</text-view></div>
               </div>
           </div>
-          <div class="his-list" :focusable="true" :focusScale="1.1">
+          <div class="his-list" :focusable="true" :focusScale="1.1" @click="openVideo">
             <img
               src="../../../static/img/history/his13.png"
             />
@@ -26,7 +26,7 @@
               <div class="view-box"><text-view  class="text-view" :focusable=false :select="true"  maxLines="1" ellipsizeMode="3"  >刺激过山车第二季</text-view></div>
               </div>
           </div>
-          <div class="his-list" :focusable="true" :focusScale="1.1">
+          <div class="his-list" :focusable="true" :focusScale="1.1" @click="openVideo">
             <img
               src="../../../static/img/history/his15.png"
             />
@@ -34,7 +34,7 @@
               <div class="view-box"><text-view  class="text-view" :focusable=false :select="true"  maxLines="1" ellipsizeMode="3"  >侏罗纪公园</text-view></div>
               </div>
           </div>
-           <div class="his-list" :focusable="true" :focusScale="1.1">
+           <div class="his-list" :focusable="true" :focusScale="1.1" @click="openVideo">
             <img
               src="../../../static/img/history/his1.png"
             />
@@ -42,7 +42,7 @@
               <div class="view-box"><text-view  class="text-view" :focusable=false :select="true"  maxLines="1" ellipsizeMode="3"  >VR旅游</text-view></div>
               </div>
           </div>
-           <div class="his-list" :focusable="true" :focusScale="1.1">
+           <div class="his-list" :focusable="true" :focusScale="1.1" @click="openVideo">
             <img
               src="../../../static/img/history/his9.png"
             />
@@ -77,6 +77,13 @@ export default {
         "DeviceEventModule",
         "invokeDefaultBackPressHandler"
       );
+    },
+    openVideo() {
+      let url = "/video/playPage";
+      Vue.Native.callNative("MiniModule", "execute", {
+        action: "__AC_NEW_TAB__",
+        data: JSON.stringify({ url }),
+      });
     },
     clickView() {
       console.log("hello");
