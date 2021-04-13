@@ -1,5 +1,5 @@
 <template>
-  <div class="contain" ref="list">
+  <div class="contain">
     <div class="head" :gradientBackground="gradientBackground">
       <div class="nav-left">
         <img :src="imgSrc" class="logoimg" />
@@ -145,6 +145,7 @@
             :focusable="true"
             :focusScale="1.1"
             @click="openVideo"
+            :requestFocus="true"
           >
             <div class="img">
               <img :src="swiperUrl" class="default" />
@@ -179,7 +180,7 @@
         </div>
 
         <!-- 竖排图片1 -->
-        
+
         <div class="section display-flex flex-row">
           <div
             class="small-list focus-area"
@@ -297,7 +298,7 @@
             @click="openVideo"
           >
             <div class="list-label">
-              <img src="../../../static/img/hot.png"/>
+              <img src="../../../static/img/hot.png" />
             </div>
             <div class="img">
               <img src="../../../static/img/home/rm.png" class="default" />
@@ -347,7 +348,7 @@
             </div>
           </div> -->
         </div>
-         <!-- 动态数据 -->
+        <!-- 动态数据 -->
         <!-- <div class="model-list" v-for="(item, i) in modelList" :key="i">
           <p class="home-section-name">{{ item.title }}</p>
           <div class="section display-flex flex-row">
@@ -377,19 +378,17 @@
             </div>
           </div>
         </div> -->
-                <!-- 竖排图片2  娱乐-->
+        <!-- 竖排图片2  娱乐-->
         <p class="home-section-name">娱乐</p>
         <div class="section display-flex flex-row">
           <div
             class="small-list focus-area"
             :focusable="true"
             :focusScale="1.05"
+            @click="openVideo"
           >
             <div class="img">
-              <img
-                src="../../../static/img/home/yl1.png"
-                class="default"
-              />
+              <img src="../../../static/img/home/yl1.png" class="default" />
             </div>
             <div class="list-word">
               <div class="view-box">
@@ -408,12 +407,10 @@
             class="small-list focus-area"
             :focusable="true"
             :focusScale="1.05"
+            @click="openVideo"
           >
             <div class="img">
-              <img
-                src="../../../static/img/home/yl2.png"
-                class="default"
-              />
+              <img src="../../../static/img/home/yl2.png" class="default" />
             </div>
             <div class="list-word">
               <div class="view-box">
@@ -432,12 +429,10 @@
             class="small-list focus-area"
             :focusable="true"
             :focusScale="1.05"
+            @click="openVideo"
           >
             <div class="img">
-              <img
-                src="../../../static/img/home/yl3.png"
-                class="default"
-              />
+              <img src="../../../static/img/home/yl3.png" class="default" />
             </div>
             <div class="list-word">
               <div class="view-box">
@@ -456,12 +451,10 @@
             class="small-list focus-area"
             :focusable="true"
             :focusScale="1.05"
+            @click="openVideo"
           >
             <div class="img">
-              <img
-                src="../../../static/img/home/yl4.png"
-                class="default"
-              />
+              <img src="../../../static/img/home/yl4.png" class="default" />
             </div>
             <div class="list-word">
               <div class="view-box">
@@ -480,12 +473,10 @@
             class="small-list focus-area"
             :focusable="true"
             :focusScale="1.05"
+            @click="openVideo('yule')"
           >
             <div class="img">
-              <img
-                src="../../../static/img/home/more.png"
-                class="default"
-              />
+              <img src="../../../static/img/home/more.png" class="default" />
             </div>
             <!-- <div class="list-word" >
               <div class="view-box"><text-view  class="text-view" :focusable=false :select="true"  maxLines="1" ellipsizeMode="2"  >忠实可靠的绅士柴犬</text-view></div>
@@ -500,12 +491,10 @@
             class="small-list focus-area"
             :focusable="true"
             :focusScale="1.05"
+            @click="openVideo"
           >
             <div class="img">
-              <img
-                src="../../../static/img/home/mc1.png"
-                class="default"
-              />
+              <img src="../../../static/img/home/mc1.png" class="default" />
             </div>
             <div class="list-word">
               <div class="view-box">
@@ -524,12 +513,10 @@
             class="small-list focus-area"
             :focusable="true"
             :focusScale="1.05"
+            @click="openVideo"
           >
             <div class="img">
-              <img
-                src="../../../static/img/home/mc2.png"
-                class="default"
-              />
+              <img src="../../../static/img/home/mc2.png" class="default" />
             </div>
             <div class="list-word">
               <div class="view-box">
@@ -548,12 +535,10 @@
             class="small-list focus-area"
             :focusable="true"
             :focusScale="1.05"
+            @click="openVideo"
           >
             <div class="img">
-              <img
-                src="../../../static/img/home/mc3.png"
-                class="default"
-              />
+              <img src="../../../static/img/home/mc3.png" class="default" />
             </div>
             <div class="list-word">
               <div class="view-box">
@@ -572,12 +557,10 @@
             class="small-list focus-area"
             :focusable="true"
             :focusScale="1.05"
+            @click="openVideo"
           >
             <div class="img">
-              <img
-                src="../../../static/img/home/mc4.png"
-                class="default"
-              />
+              <img src="../../../static/img/home/mc4.png" class="default" />
             </div>
             <div class="list-word">
               <div class="view-box">
@@ -596,12 +579,10 @@
             class="small-list focus-area"
             :focusable="true"
             :focusScale="1.05"
+            @click="openVideo('mengchong')"
           >
             <div class="img">
-              <img
-                src="../../../static/img/home/more.png"
-                class="default"
-              />
+              <img src="../../../static/img/home/more.png" class="default" />
             </div>
             <!-- <div class="list-word" >
               <div class="view-box"><text-view  class="text-view" :focusable=false :select="true"  maxLines="1" ellipsizeMode="2"  >忠实可靠的绅士柴犬</text-view></div>
@@ -616,12 +597,10 @@
             class="small-list focus-area"
             :focusable="true"
             :focusScale="1.05"
+            @click="openVideo"
           >
             <div class="img">
-              <img
-                src="../../../static/img/home/yd1.jpg"
-                class="default"
-              />
+              <img src="../../../static/img/home/yd1.jpg" class="default" />
             </div>
             <div class="list-word">
               <div class="view-box">
@@ -640,12 +619,10 @@
             class="small-list focus-area"
             :focusable="true"
             :focusScale="1.05"
+            @click="openVideo"
           >
             <div class="img">
-              <img
-                src="../../../static/img/home/yd1.jpg"
-                class="default"
-              />
+              <img src="../../../static/img/home/yd1.jpg" class="default" />
             </div>
             <div class="list-word">
               <div class="view-box">
@@ -664,12 +641,10 @@
             class="small-list focus-area"
             :focusable="true"
             :focusScale="1.05"
+            @click="openVideo"
           >
             <div class="img">
-              <img
-                src="../../../static/img/home/yd1.jpg"
-                class="default"
-              />
+              <img src="../../../static/img/home/yd1.jpg" class="default" />
             </div>
             <div class="list-word">
               <div class="view-box">
@@ -688,12 +663,10 @@
             class="small-list focus-area"
             :focusable="true"
             :focusScale="1.05"
+            @click="openVideo"
           >
             <div class="img">
-              <img
-                src="../../../static/img/home/yd2.png"
-                class="default"
-              />
+              <img src="../../../static/img/home/yd2.png" class="default" />
             </div>
             <div class="list-word">
               <div class="view-box">
@@ -712,12 +685,10 @@
             class="small-list focus-area"
             :focusable="true"
             :focusScale="1.05"
+            @click="openVideo('yundong')"
           >
             <div class="img">
-              <img
-                src="../../../static/img/home/more.png"
-                class="default"
-              />
+              <img src="../../../static/img/home/more.png" class="default" />
             </div>
             <!-- <div class="list-word" >
               <div class="view-box"><text-view  class="text-view" :focusable=false :select="true"  maxLines="1" ellipsizeMode="2"  >忠实可靠的绅士柴犬</text-view></div>
@@ -732,12 +703,10 @@
             class="small-list focus-area"
             :focusable="true"
             :focusScale="1.05"
+            @click="openVideo"
           >
             <div class="img">
-              <img
-                src="../../../static/img/home/ly1.jpg"
-                class="default"
-              />
+              <img src="../../../static/img/home/ly1.jpg" class="default" />
             </div>
             <div class="list-word">
               <div class="view-box">
@@ -756,12 +725,10 @@
             class="small-list focus-area"
             :focusable="true"
             :focusScale="1.05"
+            @click="openVideo"
           >
             <div class="img">
-              <img
-                src="../../../static/img/home/ly2.jpg"
-                class="default"
-              />
+              <img src="../../../static/img/home/ly2.jpg" class="default" />
             </div>
             <div class="list-word">
               <div class="view-box">
@@ -780,12 +747,10 @@
             class="small-list focus-area"
             :focusable="true"
             :focusScale="1.05"
+            @click="openVideo"
           >
             <div class="img">
-              <img
-                src="../../../static/img/home/ly3.png"
-                class="default"
-              />
+              <img src="../../../static/img/home/ly3.png" class="default" />
             </div>
             <div class="list-word">
               <div class="view-box">
@@ -804,12 +769,10 @@
             class="small-list focus-area"
             :focusable="true"
             :focusScale="1.05"
+            @click="openVideo"
           >
             <div class="img">
-              <img
-                src="../../../static/img/home/ly4.png"
-                class="default"
-              />
+              <img src="../../../static/img/home/ly4.png" class="default" />
             </div>
             <div class="list-word">
               <div class="view-box">
@@ -828,12 +791,10 @@
             class="small-list focus-area"
             :focusable="true"
             :focusScale="1.05"
+            @click="openVideo('lvyou')"
           >
             <div class="img">
-              <img
-                src="../../../static/img/home/more.png"
-                class="default"
-              />
+              <img src="../../../static/img/home/more.png" class="default" />
             </div>
             <!-- <div class="list-word" >
               <div class="view-box"><text-view  class="text-view" :focusable=false :select="true"  maxLines="1" ellipsizeMode="2"  >忠实可靠的绅士柴犬</text-view></div>
@@ -848,12 +809,10 @@
             class="small-list focus-area"
             :focusable="true"
             :focusScale="1.05"
+            @click="openVideo"
           >
             <div class="img">
-              <img
-                src="../../../static/img/home/vr1.png"
-                class="default"
-              />
+              <img src="../../../static/img/home/vr1.png" class="default" />
             </div>
             <div class="list-word">
               <div class="view-box">
@@ -872,12 +831,10 @@
             class="small-list focus-area"
             :focusable="true"
             :focusScale="1.05"
+            @click="openVideo"
           >
             <div class="img">
-              <img
-                src="../../../static/img/home/vr2.png"
-                class="default"
-              />
+              <img src="../../../static/img/home/vr2.png" class="default" />
             </div>
             <div class="list-word">
               <div class="view-box">
@@ -896,12 +853,10 @@
             class="small-list focus-area"
             :focusable="true"
             :focusScale="1.05"
+            @click="openVideo"
           >
             <div class="img">
-              <img
-                src="../../../static/img/home/vr3.png"
-                class="default"
-              />
+              <img src="../../../static/img/home/vr3.png" class="default" />
             </div>
             <div class="list-word">
               <div class="view-box">
@@ -920,12 +875,10 @@
             class="small-list focus-area"
             :focusable="true"
             :focusScale="1.05"
+            @click="openVideo"
           >
             <div class="img">
-              <img
-                src="../../../static/img/home/vr4.png"
-                class="default"
-              />
+              <img src="../../../static/img/home/vr4.png" class="default" />
             </div>
             <div class="list-word">
               <div class="view-box">
@@ -944,12 +897,10 @@
             class="small-list focus-area"
             :focusable="true"
             :focusScale="1.05"
+            @click="openVideo('vr')"
           >
             <div class="img">
-              <img
-                src="../../../static/img/home/more.png"
-                class="default"
-              />
+              <img src="../../../static/img/home/more.png" class="default" />
             </div>
             <!-- <div class="list-word" >
               <div class="view-box"><text-view  class="text-view" :focusable=false :select="true"  maxLines="1" ellipsizeMode="2"  ></text-view></div>
@@ -962,7 +913,7 @@
             class="home-bottom focus-area"
             :focusable="true"
             :focusScale="1.05"
-            @click="scrollToTop"
+            @click="scrollPage(0)"
           >
             <p class="botom-word">我是有底线的~按我返回顶部</p>
           </div>
@@ -987,6 +938,10 @@ export default {
       slide1: slide1,
       selected: selected,
       isActive: 0,
+      scrollPos: {
+        top: 0,
+        left: 0,
+      },
       recmondList: [
         {
           level: "Top1",
@@ -1198,13 +1153,48 @@ export default {
     },
     onChildFocus(index) {
       this.isShowBg = index;
+      if (index === 1) {
+        this.scrollPage(860);
+      } else if (index === 2) {
+        this.scrollPage(1400);
+      } else if (index === 3) {
+        this.scrollPage(1920);
+      } else if (index === 4) {
+        this.scrollPage(2460);
+      } else if (index === 5) {
+        this.scrollPage(3000);
+      }
       console.log("获取焦点啦");
     },
     //跳转到视频页面
     openVideo(type) {
       console.log("sjsjs");
-      if (type == "more") {
-        let url = "/video/moreList";
+      if (type == "yule") {
+        let url = "/video/moreYule";
+        Vue.Native.callNative("MiniModule", "execute", {
+          action: "__AC_NEW_TAB__",
+          data: JSON.stringify({ url }),
+        });
+      } else if (type == "mengchong") {
+        let url = "/video/moreMengchong";
+        Vue.Native.callNative("MiniModule", "execute", {
+          action: "__AC_NEW_TAB__",
+          data: JSON.stringify({ url }),
+        });
+      } else if (type == "yundong") {
+        let url = "/video/moreYundong";
+        Vue.Native.callNative("MiniModule", "execute", {
+          action: "__AC_NEW_TAB__",
+          data: JSON.stringify({ url }),
+        });
+      } else if (type == "lvyou") {
+        let url = "/video/moreLvyou";
+        Vue.Native.callNative("MiniModule", "execute", {
+          action: "__AC_NEW_TAB__",
+          data: JSON.stringify({ url }),
+        });
+      } else if (type == "vr") {
+        let url = "/video/moreVR";
         Vue.Native.callNative("MiniModule", "execute", {
           action: "__AC_NEW_TAB__",
           data: JSON.stringify({ url }),
@@ -1216,6 +1206,64 @@ export default {
           data: JSON.stringify({ url }),
         });
       }
+      // switch (type) {
+      //   case "yule":
+      //     let url = "/video/moreYule";
+      //     Vue.Native.callNative("MiniModule", "execute", {
+      //       action: "__AC_NEW_TAB__",
+      //       data: JSON.stringify({ url }),
+      //     });
+      //     break;
+      //   case "mengchong":
+      //     let url = "/video/moreMengchong";
+      //     Vue.Native.callNative("MiniModule", "execute", {
+      //       action: "__AC_NEW_TAB__",
+      //       data: JSON.stringify({ url }),
+      //     });
+      //     break;
+      //   case "yundong":
+      //     let url = "/video/moreYundong";
+      //     Vue.Native.callNative("MiniModule", "execute", {
+      //       action: "__AC_NEW_TAB__",
+      //       data: JSON.stringify({ url }),
+      //     });
+      //     break;
+      //   case "lvyou":
+      //     let url = "/video/moreLvyou";
+      //     Vue.Native.callNative("MiniModule", "execute", {
+      //       action: "__AC_NEW_TAB__",
+      //       data: JSON.stringify({ url }),
+      //     });
+      //     break;
+      //   case "vr":
+      //     let url = "/video/moreVR";
+      //     Vue.Native.callNative("MiniModule", "execute", {
+      //       action: "__AC_NEW_TAB__",
+      //       data: JSON.stringify({ url }),
+      //     });
+      //     break;
+
+      //   default:
+      //     let url = "/video/playPage";
+      //     Vue.Native.callNative("MiniModule", "execute", {
+      //       action: "__AC_NEW_TAB__",
+      //       data: JSON.stringify({ url }),
+      //     });
+      //     break;
+      // }
+      // if (type == "more") {
+      //   let url = "/video/moreList";
+      //   Vue.Native.callNative("MiniModule", "execute", {
+      //     action: "__AC_NEW_TAB__",
+      //     data: JSON.stringify({ url }),
+      //   });
+      // } else {
+      //   let url = "/video/playPage";
+      //   Vue.Native.callNative("MiniModule", "execute", {
+      //     action: "__AC_NEW_TAB__",
+      //     data: JSON.stringify({ url }),
+      //   });
+      // }
     },
     //跳转到排行榜
     routerToRank() {
@@ -1242,6 +1290,24 @@ export default {
         data: JSON.stringify({ url }),
       });
     },
+    scrollPage(top) {
+      // 因为布局问题，浏览器内 flex: 1 后也会超出窗口尺寸高度，所以这么滚是不行的。
+      if (!Vue.Native) {
+        /* eslint-disable-next-line no-alert */
+        alert("This method is only supported in Native environment.");
+        return;
+      }
+      console.log(this);
+      const { list } = this.$refs;
+      const { scrollPos } = this;
+      // CSSOM View standard - ScrollToOptions
+      // https://www.w3.org/TR/cssom-view-1/#extensions-to-the-window-interface
+      list.scrollTo({
+        left: scrollPos.left,
+        top,
+      }); // 其实 scrollPost.left 写 0 也可以。
+      console.log("===================");
+    },
     onScroll(evt) {
       console.log("lilili", evt);
       evt.stopPropagation(); // 这个事件触发比较频繁，最好阻止一下冒泡。
@@ -1251,6 +1317,20 @@ export default {
       };
       // 初始化时曝光上报
       this.exposureReport(evt.offsetY);
+    },
+    exposureReport(screenTop) {
+      // 获取可视范围内的组件
+      const componentsInWindow = Object.keys(heightOfComponents).filter(
+        (index) => {
+          const height = heightOfComponents[index];
+          return (
+            screenTop <= height && screenTop + this.$windowHeight >= height
+          );
+        }
+      );
+      // 其实没有上报，只是把界面上正在曝光的组件列出来了。
+      // 同时曝光锁还得业务自己做。
+      console.log("Exposuring components:", componentsInWindow);
     },
     //返回顶部
     scrollToTop() {

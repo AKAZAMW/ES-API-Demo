@@ -3,7 +3,11 @@ import history from './history';
 import playPage from './playPage';
 import rankList from './rankList';
 import feedback from './feedback';
-import morelist from './morelist';
+import moreYule from './moreYule';
+import moreMengchong from './moreMengchong';
+import moreYundong from './moreYundong';
+import moreLvyou from './moreLvyou';
+import moreVR from './moreVR';
 
 const hdVideo = {
   home: {
@@ -26,9 +30,25 @@ const hdVideo = {
     name: '反馈页面',
     component: feedback,
   },
-  moreList: {
-    name: '更多页面',
-    component: morelist,
+  moreYule: {
+    name: '娱乐',
+    component: moreYule,
+  },
+  moreMengchong: {
+    name: '萌宠',
+    component: moreMengchong,
+  },
+  moreYundong: {
+    name: '运动',
+    component: moreYundong,
+  },
+  moreLvyou: {
+    name: '旅游',
+    component: moreLvyou,
+  },
+  moreVR: {
+    name: '天翼VR',
+    component: moreVR,
   },
 };
 

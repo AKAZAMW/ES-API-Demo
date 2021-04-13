@@ -2,9 +2,9 @@
   <div class="container2">
     <div class="head-name flex-row">
       <img
-        src="http://120.236.119.11:58011/ivod/jiangsuVR/img/home/btn_icon1.png"
+        src="../../../static/img/yule.png"
       />
-      <p class="his-word">更多</p>
+      <p class="his-word">娱乐</p>
     </div>
     <!-- 历史加载区域 -->
     <div id="div-clumn" class="display-flex flex-column">
@@ -12,115 +12,93 @@
         <div class="display-flex flex-row his-content">
           <div class="his-list" :focusable="true" :focusScale="1.1">
             <img
-              src="http://120.236.119.11:58011/uploads/images/86cb29c637e8b31839b8aec0c13d0432.png"
+              src="../../../static/img/history/his6.png"
             />
-            <p class="list-word">VR旅游</p>
+            <div class="list-word" >
+              <div class="view-box"><text-view  class="text-view" :focusable=false :select="true"  maxLines="1" ellipsizeMode="3"  >刺激过山车第一季</text-view></div>
+              </div>
           </div>
           <div class="his-list" :focusable="true" :focusScale="1.1">
             <img
-              src="http://120.236.119.11:58011/uploads/images/7d5d1e41c1b1fa6c839792529d7f3ce8.png"
+              src="../../../static/img/history/his13.png"
+            />
+            <div class="list-word" >
+              <div class="view-box"><text-view  class="text-view" :focusable=false :select="true"  maxLines="1" ellipsizeMode="3"  >刺激过山车第二季</text-view></div>
+              </div>
+          </div>
+          <div class="his-list" :focusable="true" :focusScale="1.1">
+            <img
+              src="../../../static/img/history/his17.png"
+            />
+            <div class="list-word" >
+              <div class="view-box"><text-view  class="text-view" :focusable=false :select="true"  maxLines="1" ellipsizeMode="3"  >堡垒之夜第一季</text-view></div>
+              </div>
+          </div>
+          <div class="his-list" :focusable="true" :focusScale="1.1">
+            <img
+              src="../../../static/img/history/his5.png"
+            />
+            <div class="list-word" >
+              <div class="view-box"><text-view  class="text-view" :focusable=false :select="true"  maxLines="1" ellipsizeMode="3"  >堡垒之夜第二季</text-view></div>
+              </div>
+          </div>
+          <div class="his-list" :focusable="true" :focusScale="1.1">
+            <img
+              src="../../../static/img/history/gggs.png"
+            />
+            <div class="list-word" >
+              <div class="view-box"><text-view  class="text-view" :focusable=false :select="true"  maxLines="1" ellipsizeMode="3"  >搞怪故事</text-view></div>
+              </div>
+          </div>
+        </div>
+        <div class="display-flex flex-row his-content">
+          <div class="his-list" :focusable="true" :focusScale="1.1">
+            <img
+              src="../../../static/img/history/his11.png"
+            />
+            <div class="list-word" >
+              <div class="view-box"><text-view  class="text-view" :focusable=false :select="true"  maxLines="1" ellipsizeMode="3"  >拍刀</text-view></div>
+              </div>
+          </div>
+          <div class="his-list" :focusable="true" :focusScale="1.1">
+            <img
+              src="../../../static/img/history/his2.png"
             />
             <p class="list-word">赛车比赛</p>
           </div>
           <div class="his-list" :focusable="true" :focusScale="1.1">
             <img
-              src="http://120.236.119.11:58011/uploads/images/375c3dff13abffc62d590000502f0776.png"
-            />
-            <p class="list-word">动物园游园会</p>
-          </div>
-          <div class="his-list" :focusable="true" :focusScale="1.1">
-            <img
-              src="http://120.236.119.11:58011/uploads/images/b48a08b19a979955e18d76288453d798.png"
-            />
-            <p class="list-word">VR娱乐</p>
-          </div>
-          <div class="his-list" :focusable="true" :focusScale="1.1">
-            <img
-              src="http://120.236.119.11:58011/uploads/images/2aadddb877c4419369b921d81f1c8f13.png"
-            />
-            <p class="list-word">堡垒之夜第二季</p>
-          </div>
-        </div>
-        <div class="display-flex flex-row his-content">
-          <div class="his-list" :focusable="true" :focusScale="1.1">
-            <img
-              src="http://120.236.119.11:58011/uploads/images/3052542b0d9c9f2c8f3c1c8a3b40ee09.png"
+              src="../../../static/img/history/his10.png"
             />
             <div class="list-word" >
-              <div class="view-box"><text-view  class="text-view" :focusable=false :select="true"  maxLines="1" ellipsizeMode="3"  >刺激过山车第二季</text-view></div>
+              <div class="view-box"><text-view  class="text-view" :focusable=false :select="true"  maxLines="1" ellipsizeMode="3"  >我的世界第一季</text-view></div>
               </div>
           </div>
           <div class="his-list" :focusable="true" :focusScale="1.1">
             <img
-              src="http://120.236.119.11:58011/uploads/images/8a34afa198471df19f1e4ad220d7ed3d.png"
-            />
-            <p class="list-word">AKB48</p>
-          </div>
-          <div class="his-list" :focusable="true" :focusScale="1.1">
-            <img
-              src="http://120.236.119.11:58011/uploads/images/5458240b3306b9b8e3b2b9aea42bd88e.jpg"
-            />
-            <p class="list-word">动物世界</p>
-          </div>
-          <div class="his-list" :focusable="true" :focusScale="1.1">
-            <img
-              src="http://120.236.119.11:58011/uploads/images/38f0cd9807b1606fd5d4fe720e10a3d4.png"
-            />
-            <p class="list-word">VR纪录片</p>
-          </div>
-          <div class="his-list" :focusable="true" :focusScale="1.1">
-            <img
-              src="http://120.236.119.11:58011/uploads/images/423d97d5214d262bb6d6348ba14128c4.png"
-            />
-            <p class="list-word">我的世界第一季</p>
-          </div>
-        </div>
-        <div class="display-flex flex-row his-content">
-          <div class="his-list" :focusable="true" :focusScale="1.1">
-            <img
-              src="http://120.236.119.11:58011/uploads/images/3a47dbb67aba523700aa3a3b4ec90389.png"
-            />
-            <p class="list-word">拍刀</p>
-          </div>
-          <div class="his-list" :focusable="true" :focusScale="1.1">
-            <img
-              src="http://120.236.119.11:58011/uploads/images/d95ae3bd7d8d2bba02a01575769398f0.png"
-            />
-            <p class="list-word">宠物美容院</p>
-          </div>
-          <div class="his-list" :focusable="true" :focusScale="1.1">
-            <img
-              src="http://120.236.119.11:58011/uploads/images/98703ce9f03f26846228419f2c825977.png"
+              src="../../../static/img/history/his15.png"
             />
             <div class="list-word" >
-              <div class="view-box"><text-view  class="text-view" :focusable=false :select="true"  maxLines="1" ellipsizeMode="3"  >刺激过山车第二季</text-view></div>
+              <div class="view-box"><text-view  class="text-view" :focusable=false :select="true"  maxLines="1" ellipsizeMode="3"  >侏罗纪公园</text-view></div>
               </div>
           </div>
           <div class="his-list" :focusable="true" :focusScale="1.1">
             <img
-              src="http://120.236.119.11:58011/uploads/images/112a6455a234f1abc3e794a42c62cd86.png"
+              src="../../../static/img/history/his9.png"
             />
-            <p class="list-word">VR体育</p>
-          </div>
-          <div class="his-list" :focusable="true" :focusScale="1.1">
-            <img
-              src="http://120.236.119.11:58011/uploads/images/ac9348097a44f201fe17c2bee5bc2f54.png"
-            />
-            <p class="list-word">侏罗纪公园</p>
+            <div class="list-word" >
+              <div class="view-box"><text-view  class="text-view" :focusable=false :select="true"  maxLines="1" ellipsizeMode="3"  >VR纪录片</text-view></div>
+              </div>
           </div>
         </div>
         <div class="display-flex flex-row his-content" style="margin-bottom:100px;">
           <div class="his-list" :focusable="true" :focusScale="1.1">
             <img
-              src="http://120.236.119.11:58011/uploads/images/c265b0fc85d7871bd23ed699c13c0549.png"
+              src="../../../static/img/history/his4.png"
             />
-            <p class="list-word">堡垒之夜第一季</p>
-          </div>
-          <div class="his-list" :focusable="true" :focusScale="1.1">
-            <img
-              src="http://120.236.119.11:58011/uploads/images/884fec833129e6c1e06728cdcc92de9a.jpg"
-            />
-            <p class="list-word">过山车</p>
+            <div class="list-word" >
+              <div class="view-box"><text-view  class="text-view" :focusable=false :select="true"  maxLines="1" ellipsizeMode="3"  >VR娱乐</text-view></div>
+              </div>
           </div>
         </div>
       </div>
