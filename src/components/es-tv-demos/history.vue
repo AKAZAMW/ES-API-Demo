@@ -201,14 +201,14 @@ export default {
 }
 .his-list {
   width: 307.5px;
-  height: 510px;
+  height: 520px;
   margin-top: 30px;
   margin-right: 50px;
   border: 1px solid red;
 }
 .his-list img {
-  width: 307.5px;
-  height: 426px;
+  width: 1307.5px;
+  height: 436px;
   border-radius: 7.5px;
 }
 .list-word {

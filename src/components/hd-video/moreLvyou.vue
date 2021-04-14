@@ -30,25 +30,28 @@
             <img
               src="../../../static/img/history/his15.png"
             />
-            <div class="list-word" >
+            <p class="list-word">侏罗纪公园</p>
+            <!-- <div class="list-word" >
               <div class="view-box"><text-view  class="text-view" :focusable=false :select="true"  maxLines="1" ellipsizeMode="3"  >侏罗纪公园</text-view></div>
-              </div>
+              </div> -->
           </div>
            <div class="his-list" :focusable="true" :focusScale="1.1" @click="openVideo">
             <img
               src="../../../static/img/history/his1.png"
             />
-            <div class="list-word" >
+            <p class="list-word">VR旅游</p>
+            <!-- <div class="list-word" >
               <div class="view-box"><text-view  class="text-view" :focusable=false :select="true"  maxLines="1" ellipsizeMode="3"  >VR旅游</text-view></div>
-              </div>
+              </div> -->
           </div>
            <div class="his-list" :focusable="true" :focusScale="1.1" @click="openVideo">
             <img
               src="../../../static/img/history/his9.png"
             />
-            <div class="list-word" >
+            <p class="list-word">VR纪录片</p>
+            <!-- <div class="list-word" >
               <div class="view-box"><text-view  class="text-view" :focusable=false :select="true"  maxLines="1" ellipsizeMode="3"  >VR纪录片</text-view></div>
-              </div>
+              </div> -->
           </div>
         </div>
         <div class="display-flex flex-row his-content" style="margin-bottom:100px;">

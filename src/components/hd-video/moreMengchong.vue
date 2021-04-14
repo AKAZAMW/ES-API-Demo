@@ -1,43 +1,55 @@
 <template>
   <div class="container2">
     <div class="head-name flex-row">
-      <img
-        src="../../../static/img/mengchong.png"
-      />
+      <img src="../../../static/img/mengchong.png" />
       <p class="his-word">萌宠</p>
     </div>
     <!-- 历史加载区域 -->
     <div id="div-clumn" class="display-flex flex-column">
       <div class="page-loading">
         <div class="display-flex flex-row his-content">
-          <div class="his-list" :focusable="true" :focusScale="1.1" :requestFocus="true"  @click="openVideo">
-            <img
-              src="../../../static/img/history/his8.jpg"
-            />
-            <div class="list-word" >
+          <div
+            class="his-list"
+            :focusable="true"
+            :focusScale="1.1"
+            :requestFocus="true"
+            @click="openVideo"
+          >
+            <img src="../../../static/img/history/his8.jpg" />
+            <p class="list-word">动物世界</p>
+            <!-- <div class="list-word" >
               <div class="view-box"><text-view  class="text-view" :focusable=false :select="true"  maxLines="1" ellipsizeMode="3"  >动物世界</text-view></div>
-              </div>
+              </div> -->
           </div>
-          <div class="his-list" :focusable="true" :focusScale="1.1" @click="openVideo">
-            <img
-              src="../../../static/img/history/his3.png"
-            />
-            <div class="list-word" >
+          <div
+            class="his-list"
+            :focusable="true"
+            :focusScale="1.1"
+            @click="openVideo"
+          >
+            <img src="../../../static/img/history/his3.png" />
+            <p class="list-word">动物游园会</p>
+            <!-- <div class="list-word" >
               <div class="view-box"><text-view  class="text-view" :focusable=false :select="true"  maxLines="1" ellipsizeMode="3"  >动物游园会</text-view></div>
-              </div>
+              </div> -->
           </div>
-          <div class="his-list" :focusable="true" :focusScale="1.1" @click="openVideo">
-            <img
-              src="../../../static/img/history/his12.png"
-            />
-            <div class="list-word" >
+          <div
+            class="his-list"
+            :focusable="true"
+            :focusScale="1.1"
+            @click="openVideo"
+          >
+            <img src="../../../static/img/history/his12.png" />
+            <p class="list-word">宠物美容院</p>
+            <!-- <div class="list-word" >
               <div class="view-box"><text-view  class="text-view" :focusable=false :select="true"  maxLines="1" ellipsizeMode="3"  >宠物美容院</text-view></div>
-              </div>
+              </div> -->
           </div>
         </div>
-        <div class="display-flex flex-row his-content" style="margin-bottom:100px;">
-          
-        </div>
+        <div
+          class="display-flex flex-row his-content"
+          style="margin-bottom: 100px"
+        ></div>
       </div>
     </div>
   </div>
@@ -104,12 +116,11 @@ export default {
   font-size: 45px;
   line-height: 130px;
 }
- #div-clumn {
-    flex: 1;
-    overflow-y: scroll;
-    /* padding: 50px; */
-    
-  }
+#div-clumn {
+  flex: 1;
+  overflow-y: scroll;
+  /* padding: 50px; */
+}
 .page-loading {
   position: relative;
   width: 1920px;
@@ -152,13 +163,12 @@ export default {
   flex-direction: column;
 }
 .view-box {
-    width: 280px;
-    padding: 10px;
-
-  }
- .view-box .text-view {
-    height: 50px;
-    color: #fff;
+  width: 280px;
+  padding: 10px;
+}
+.view-box .text-view {
+  height: 50px;
+  color: #fff;
   font-size: 40px;
-  }
+}
 </style>

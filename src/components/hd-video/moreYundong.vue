@@ -15,7 +15,7 @@
               src="../../../static/img/history/his17.png"
             />
             <div class="list-word" >
-              <div class="view-box"><text-view  class="text-view" :focusable=false :select="true"  maxLines="1" ellipsizeMode="3"  >堡垒之夜第一季</text-view></div>
+              <div class="view-box"><text-view  class="text-view" :focusable=false :select="true"  maxLines="1" ellipsizeMode="3"  >堡垒之夜&nbsp;&nbsp;&nbsp;第一季</text-view></div>
               </div>
           </div>
           <div class="his-list" :focusable="true" :focusScale="1.1" @click="openVideo">
@@ -23,32 +23,35 @@
               src="../../../static/img/history/his5.png"
             />
             <div class="list-word" >
-              <div class="view-box"><text-view  class="text-view" :focusable=false :select="true"  maxLines="1" ellipsizeMode="3"  >堡垒之夜第二季</text-view></div>
+              <div class="view-box"><text-view  class="text-view" :focusable=false :select="true"  maxLines="1" ellipsizeMode="3"  >堡垒之夜&nbsp;&nbsp;&nbsp;第二季</text-view></div>
               </div>
           </div>
           <div class="his-list" :focusable="true" :focusScale="1.1" @click="openVideo">
             <img
               src="../../../static/img/history/his11.png"
             />
-            <div class="list-word" >
+            <p class="list-word">拍刀</p>
+            <!-- <div class="list-word" >
               <div class="view-box"><text-view  class="text-view" :focusable=false :select="true"  maxLines="1" ellipsizeMode="3"  >拍刀</text-view></div>
-              </div>
+              </div> -->
           </div>
           <div class="his-list" :focusable="true" :focusScale="1.1" @click="openVideo">
             <img
               src="../../../static/img/history/his2.png"
             />
-            <div class="list-word" >
+            <p class="list-word">赛车比赛</p>
+            <!-- <div class="list-word" >
               <div class="view-box"><text-view  class="text-view" :focusable=false :select="true"  maxLines="1" ellipsizeMode="3"  >赛车比赛</text-view></div>
-              </div>
+              </div> -->
           </div>
           <div class="his-list" :focusable="true" :focusScale="1.1" @click="openVideo">
             <img
               src="../../../static/img/history/his9.png"
             />
-            <div class="list-word" >
+            <p class="list-word">VR纪录片</p>
+            <!-- <div class="list-word" >
               <div class="view-box"><text-view  class="text-view" :focusable=false :select="true"  maxLines="1" ellipsizeMode="3"  >VR纪录片</text-view></div>
-              </div>
+              </div> -->
           </div>
         </div>
         <div class="display-flex flex-row his-content" style="margin-bottom:100px;">
@@ -56,17 +59,19 @@
             <img
               src="../../../static/img/history/his14.png"
             />
-            <div class="list-word" >
+            <p class="list-word">VR体育</p>
+            <!-- <div class="list-word" >
               <div class="view-box"><text-view  class="text-view" :focusable=false :select="true"  maxLines="1" ellipsizeMode="3"  >VR体育</text-view></div>
-              </div>
+              </div> -->
           </div>
           <div class="his-list" :focusable="true" :focusScale="1.1" @click="openVideo">
             <img
               src="../../../static/img/history/his4.png"
             />
-            <div class="list-word" >
+            <p class="list-word">VR娱乐</p>
+            <!-- <div class="list-word" >
               <div class="view-box"><text-view  class="text-view" :focusable=false :select="true"  maxLines="1" ellipsizeMode="3"  >VR娱乐</text-view></div>
-              </div>
+              </div> -->
           </div>
         </div>
       </div>

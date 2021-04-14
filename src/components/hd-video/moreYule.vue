@@ -31,7 +31,7 @@
               src="../../../static/img/history/his17.png"
             />
             <div class="list-word" >
-              <div class="view-box"><text-view  class="text-view" :focusable=false :select="true"  maxLines="1" ellipsizeMode="3"  >堡垒之夜第一季</text-view></div>
+              <div class="view-box"><text-view  class="text-view" :focusable=false :select="true"  maxLines="1" ellipsizeMode="3"  >堡垒之夜&nbsp;&nbsp;&nbsp;第一季</text-view></div>
               </div>
           </div>
           <div class="his-list" :focusable="true" :focusScale="1.1" @click="openVideo">
@@ -39,16 +39,17 @@
               src="../../../static/img/history/his5.png"
             />
             <div class="list-word" >
-              <div class="view-box"><text-view  class="text-view" :focusable=false :select="true"  maxLines="1" ellipsizeMode="3"  >堡垒之夜第二季</text-view></div>
+              <div class="view-box"><text-view  class="text-view" :focusable=false :select="true"  maxLines="1" ellipsizeMode="3"  >堡垒之夜&nbsp;&nbsp;&nbsp;第二季</text-view></div>
               </div>
           </div>
           <div class="his-list" :focusable="true" :focusScale="1.1" @click="openVideo">
             <img
               src="../../../static/img/history/gggs.png"
             />
-            <div class="list-word" >
+            <p class="list-word">搞怪故事</p>
+            <!-- <div class="list-word" >
               <div class="view-box"><text-view  class="text-view" :focusable=false :select="true"  maxLines="1" ellipsizeMode="3"  >搞怪故事</text-view></div>
-              </div>
+              </div> -->
           </div>
         </div>
         <div class="display-flex flex-row his-content">
@@ -56,9 +57,10 @@
             <img
               src="../../../static/img/history/his11.png"
             />
-            <div class="list-word" >
+            <p class="list-word">拍刀</p>
+            <!-- <div class="list-word" >
               <div class="view-box"><text-view  class="text-view" :focusable=false :select="true"  maxLines="1" ellipsizeMode="3"  >拍刀</text-view></div>
-              </div>
+              </div> -->
           </div>
           <div class="his-list" :focusable="true" :focusScale="1.1" @click="openVideo">
             <img
@@ -71,24 +73,26 @@
               src="../../../static/img/history/his10.png"
             />
             <div class="list-word" >
-              <div class="view-box"><text-view  class="text-view" :focusable=false :select="true"  maxLines="1" ellipsizeMode="3"  >我的世界第一季</text-view></div>
+              <div class="view-box"><text-view  class="text-view" :focusable=false :select="true"  maxLines="1" ellipsizeMode="3"  >我的世界&nbsp;&nbsp;&nbsp;第一季</text-view></div>
               </div>
           </div>
           <div class="his-list" :focusable="true" :focusScale="1.1" @click="openVideo">
             <img
               src="../../../static/img/history/his15.png"
             />
-            <div class="list-word" >
+            <p class="list-word">侏罗纪公园</p>
+            <!-- <div class="list-word" >
               <div class="view-box"><text-view  class="text-view" :focusable=false :select="true"  maxLines="1" ellipsizeMode="3"  >侏罗纪公园</text-view></div>
-              </div>
+              </div> -->
           </div>
           <div class="his-list" :focusable="true" :focusScale="1.1" @click="openVideo">
             <img
               src="../../../static/img/history/his9.png"
             />
-            <div class="list-word" >
+            <p class="list-word">VR纪录片</p>
+            <!-- <div class="list-word" >
               <div class="view-box"><text-view  class="text-view" :focusable=false :select="true"  maxLines="1" ellipsizeMode="3"  >VR纪录片</text-view></div>
-              </div>
+              </div> -->
           </div>
         </div>
         <div class="display-flex flex-row his-content" style="margin-bottom:100px;">
@@ -96,9 +100,10 @@
             <img
               src="../../../static/img/history/his4.png"
             />
-            <div class="list-word" >
+            <p class="list-word">VR娱乐</p>
+            <!-- <div class="list-word" >
               <div class="view-box"><text-view  class="text-view" :focusable=false :select="true"  maxLines="1" ellipsizeMode="3"  >VR娱乐</text-view></div>
-              </div>
+              </div> -->
           </div>
         </div>
       </div>
@@ -183,6 +188,8 @@ export default {
 }
 .his-content {
   margin-left: 100px;
+  padding-bottom: 8px;
+  padding-left: 8px;
 }
 .his-list {
   width: 307.5px;
@@ -203,6 +210,7 @@ export default {
   font-size: 40px;
   text-align: center;
   color: #fff;
+  padding-left: 12px;
 }
 .display-flex {
   display: flex;
@@ -217,11 +225,13 @@ export default {
 .view-box {
     width: 280px;
     padding: 10px;
-
+   text-align: center;
   }
  .view-box .text-view {
     height: 50px;
+    width: 307.5px;
     color: #fff;
   font-size: 40px;
+  text-align: center;
   }
 </style>

@@ -270,18 +270,20 @@ export default {
   width: 1920px;
   /* height: 7000px; */
   margin-top: 45px;
-  /* background-color: rgba(0, 0, 0, 0.8); */
+  background-color: rgba(0, 0, 0, 0);
   /* overflow-y: scroll; */
 }
 .his-content {
   margin-left: 100px;
+padding-bottom: 8px;
 }
 .his-list {
   width: 320px;
   height: 510px;
   margin-top: 30px;
   margin-right: 50px;
-  border: 1px solid red;
+  /* border: 1px solid red; */
+  /* background-color: rgba(0, 0, 0, 0.01); */
 }
 .his-list img {
   width: 320px;
@@ -292,9 +294,12 @@ export default {
   width: 320px;
   height: 84px;
   line-height: 84px;
-  font-size: 40px;
+  font-size: 36px;
   text-align: center;
   color: #fff;
+  
+  padding-left: 15px;
+  /* background-color: rgba(180, 180, 0, 0.8); */
 }
 .display-flex {
   display: flex;
