@@ -46,12 +46,12 @@
       <!-- 左侧栏 -->
       <div class="tab">
         <div class="view">
-          <ul class="tab-list" style="height: 475px">
+          <ul class="tab-list" style="height: 475px" ref="ulList">
             <li
               class="li-3"
               :focusable="true"
               :focusScale="1.01"
-              @focus="onChildFocus(1)"
+              @focus="onChildFocus(1, 'side')"
             >
               <img class="default" src="../../../static/img/yule.png" />
               <img
@@ -67,7 +67,8 @@
               class="li-3"
               :focusable="true"
               :focusScale="1.01"
-              @focus="onChildFocus(2)"
+              @focus="onChildFocus(2, 'side')"
+              ref="mc"
             >
               <img class="default" src="../../../static/img/mengchong.png" />
               <img
@@ -83,7 +84,7 @@
               class="li-3"
               :focusable="true"
               :focusScale="1.01"
-              @focus="onChildFocus(3)"
+              @focus="onChildFocus(3, 'side')"
             >
               <img class="default" src="../../../static/img/yundong.png" />
               <img
@@ -99,7 +100,7 @@
               class="li-3"
               :focusable="true"
               :focusScale="1.01"
-              @focus="onChildFocus(4)"
+              @focus="onChildFocus(4, 'side')"
             >
               <img class="default" src="../../../static/img/lvyou.png" />
               <img
@@ -115,7 +116,7 @@
               class="li-3"
               :focusable="true"
               :focusScale="1.01"
-              @focus="onChildFocus(5)"
+              @focus="onChildFocus(5, 'side')"
             >
               <img class="default" src="../../../static/img/vr.png" />
               <img
@@ -381,12 +382,13 @@
         </div> -->
         <!-- 竖排图片2  娱乐-->
         <p class="home-section-name">娱乐</p>
-        <div class="section display-flex flex-row">
+        <div class="section display-flex flex-row"  ref="contentList">
           <div
             class="small-list focus-area"
             :focusable="true"
             :focusScale="1.05"
             @click="openVideo"
+            @focus="onChildFocus(1, 'content')"
           >
             <div class="img">
               <img src="../../../static/img/home/yl1.png" class="default" />
@@ -409,6 +411,7 @@
             :focusable="true"
             :focusScale="1.05"
             @click="openVideo"
+            @focus="onChildFocus(1, 'content')"
           >
             <div class="img">
               <img src="../../../static/img/home/yl2.png" class="default" />
@@ -431,6 +434,7 @@
             :focusable="true"
             :focusScale="1.05"
             @click="openVideo"
+            @focus="onChildFocus(1, 'content')"
           >
             <div class="img">
               <img src="../../../static/img/home/yl3.png" class="default" />
@@ -453,6 +457,7 @@
             :focusable="true"
             :focusScale="1.05"
             @click="openVideo"
+            @focus="onChildFocus(1, 'content')"
           >
             <div class="img">
               <img src="../../../static/img/home/yl4.png" class="default" />
@@ -475,6 +480,7 @@
             :focusable="true"
             :focusScale="1.05"
             @click="openVideo('yule')"
+            @focus="onChildFocus(1, 'content')"
           >
             <div class="img">
               <img src="../../../static/img/home/more.png" class="default" />
@@ -492,6 +498,7 @@
             class="small-list focus-area"
             :focusable="true"
             :focusScale="1.05"
+            @focus="onChildFocus(2, 'content')"
             @click="openVideo"
           >
             <div class="img">
@@ -515,6 +522,7 @@
             :focusable="true"
             :focusScale="1.05"
             @click="openVideo"
+            @focus="onChildFocus(2, 'content')"
           >
             <div class="img">
               <img src="../../../static/img/home/mc2.png" class="default" />
@@ -537,6 +545,7 @@
             :focusable="true"
             :focusScale="1.05"
             @click="openVideo"
+            @focus="onChildFocus(2, 'content')"
           >
             <div class="img">
               <img src="../../../static/img/home/mc3.png" class="default" />
@@ -559,6 +568,7 @@
             :focusable="true"
             :focusScale="1.05"
             @click="openVideo"
+            @focus="onChildFocus(2, 'content')"
           >
             <div class="img">
               <img src="../../../static/img/home/mc4.png" class="default" />
@@ -581,13 +591,11 @@
             :focusable="true"
             :focusScale="1.05"
             @click="openVideo('mengchong')"
+            @focus="onChildFocus(2, 'content')"
           >
             <div class="img">
               <img src="../../../static/img/home/more.png" class="default" />
             </div>
-            <!-- <div class="list-word" >
-              <div class="view-box"><text-view  class="text-view" :focusable=false :select="true"  maxLines="1" ellipsizeMode="2"  >忠实可靠的绅士柴犬</text-view></div>
-              </div> -->
           </div>
         </div>
 
@@ -599,6 +607,7 @@
             :focusable="true"
             :focusScale="1.05"
             @click="openVideo"
+            @focus="onChildFocus(3, 'content')"
           >
             <div class="img">
               <img src="../../../static/img/home/yd1.jpg" class="default" />
@@ -621,6 +630,7 @@
             :focusable="true"
             :focusScale="1.05"
             @click="openVideo"
+            @focus="onChildFocus(3, 'content')"
           >
             <div class="img">
               <img src="../../../static/img/home/yd1.jpg" class="default" />
@@ -643,6 +653,7 @@
             :focusable="true"
             :focusScale="1.05"
             @click="openVideo"
+            @focus="onChildFocus(3, 'content')"
           >
             <div class="img">
               <img src="../../../static/img/home/yd1.jpg" class="default" />
@@ -665,6 +676,7 @@
             :focusable="true"
             :focusScale="1.05"
             @click="openVideo"
+            @focus="onChildFocus(3, 'content')"
           >
             <div class="img">
               <img src="../../../static/img/home/yd2.png" class="default" />
@@ -687,13 +699,11 @@
             :focusable="true"
             :focusScale="1.05"
             @click="openVideo('yundong')"
+            @focus="onChildFocus(3, 'content')"
           >
             <div class="img">
               <img src="../../../static/img/home/more.png" class="default" />
             </div>
-            <!-- <div class="list-word" >
-              <div class="view-box"><text-view  class="text-view" :focusable=false :select="true"  maxLines="1" ellipsizeMode="2"  >忠实可靠的绅士柴犬</text-view></div>
-              </div> -->
           </div>
         </div>
 
@@ -705,6 +715,7 @@
             :focusable="true"
             :focusScale="1.05"
             @click="openVideo"
+            @focus="onChildFocus(4, 'content')"
           >
             <div class="img">
               <img src="../../../static/img/home/ly1.jpg" class="default" />
@@ -727,6 +738,7 @@
             :focusable="true"
             :focusScale="1.05"
             @click="openVideo"
+            @focus="onChildFocus(4, 'content')"
           >
             <div class="img">
               <img src="../../../static/img/home/ly2.jpg" class="default" />
@@ -749,6 +761,7 @@
             :focusable="true"
             :focusScale="1.05"
             @click="openVideo"
+            @focus="onChildFocus(4, 'content')"
           >
             <div class="img">
               <img src="../../../static/img/home/ly3.png" class="default" />
@@ -771,6 +784,7 @@
             :focusable="true"
             :focusScale="1.05"
             @click="openVideo"
+            @focus="onChildFocus(4, 'content')"
           >
             <div class="img">
               <img src="../../../static/img/home/ly4.png" class="default" />
@@ -793,13 +807,11 @@
             :focusable="true"
             :focusScale="1.05"
             @click="openVideo('lvyou')"
+            @focus="onChildFocus(4, 'content')"
           >
             <div class="img">
               <img src="../../../static/img/home/more.png" class="default" />
             </div>
-            <!-- <div class="list-word" >
-              <div class="view-box"><text-view  class="text-view" :focusable=false :select="true"  maxLines="1" ellipsizeMode="2"  >忠实可靠的绅士柴犬</text-view></div>
-              </div> -->
           </div>
         </div>
 
@@ -811,6 +823,7 @@
             :focusable="true"
             :focusScale="1.05"
             @click="openVideo"
+            @focus="onChildFocus(5, 'content')"
           >
             <div class="img">
               <img src="../../../static/img/home/vr1.png" class="default" />
@@ -833,6 +846,7 @@
             :focusable="true"
             :focusScale="1.05"
             @click="openVideo"
+            @focus="onChildFocus(5, 'content')"
           >
             <div class="img">
               <img src="../../../static/img/home/vr2.png" class="default" />
@@ -855,6 +869,7 @@
             :focusable="true"
             :focusScale="1.05"
             @click="openVideo"
+            @focus="onChildFocus(5, 'content')"
           >
             <div class="img">
               <img src="../../../static/img/home/vr3.png" class="default" />
@@ -877,6 +892,7 @@
             :focusable="true"
             :focusScale="1.05"
             @click="openVideo"
+            @focus="onChildFocus(5, 'content')"
           >
             <div class="img">
               <img src="../../../static/img/home/vr4.png" class="default" />
@@ -899,6 +915,7 @@
             :focusable="true"
             :focusScale="1.05"
             @click="openVideo('vr')"
+            @focus="onChildFocus(5, 'content')"
           >
             <div class="img">
               <img src="../../../static/img/home/more.png" class="default" />
@@ -911,9 +928,9 @@
         <!-- 返回顶部 -->
         <div class="section display-flex flex-row">
           <div
-            class="home-bottom focus-area"
+            class="home-bottom"
             :focusable="true"
-            :focusScale="1.05"
+            :focusScale="1.1"
             @click="goToTop"
           >
             <p class="botom-word">我是有底线的~按我返回顶部</p>
@@ -939,6 +956,8 @@ export default {
       slide1: slide1,
       selected: selected,
       isActive: 0,
+      sibeTimeId:0,
+      contentTimeId:0,
       scrollPos: {
         top: 0,
         left: 0,
@@ -1152,20 +1171,32 @@ export default {
         "invokeDefaultBackPressHandler"
       );
     },
-    onChildFocus(index) {
+    onChildFocus(index, type) {
       this.isShowBg = index;
-      if (index === 1) {
-        this.scrollPage(860);
-      } else if (index === 2) {
-        this.scrollPage(1400);
-      } else if (index === 3) {
-        this.scrollPage(1920);
-      } else if (index === 4) {
-        this.scrollPage(2460);
-      } else if (index === 5) {
-        this.scrollPage(3000);
+
+
+      if ("side" === type) {
+        if (index === 1) {
+          this.scrollPage(900);
+        } else if (index === 2) {
+          this.scrollPage(1460);
+        } else if (index === 3) {
+          this.scrollPage(2000);
+        } else if (index === 4) {
+          this.scrollPage(2560);
+        } else if (index === 5) {
+          this.scrollPage(3120);
+        }
+        // clearTimeout(this.sibeTimeId);
+        // this.sibeTimeId = setTimeout(() => {
+        //   Vue.Native.callUIFunction(this.$refs.contentList, 'setSelectChildPosition', [15]);
+        // }, 20);
+      } else if ("content" === type){
+        clearTimeout(this.contentTimeId);
+        this.contentTimeId = setTimeout(() => {
+          Vue.Native.callUIFunction(this.$refs.ulList, 'setSelectChildPosition', [index - 1]);
+        }, 20);
       }
-      console.log("获取焦点啦");
     },
     //跳转到视频页面
     openVideo(type) {
@@ -1290,6 +1321,15 @@ export default {
         action: "__AC_NEW_TAB__",
         data: JSON.stringify({ url }),
       });
+    },
+    onULChildFocus(e) {
+      // const pos = e.child.position;
+      // console.log(`onChildFocus index:${pos}`);
+      // this.$refs.ulList.scrollToIndex(0, pos, false, 0, 0);
+      // clearTimeout(this.handler);
+      setTimeout(() => {
+        Vue.Native.callUIFunction(this.$refs.ulList, 'setSelectChildPosition', [4]);
+      }, 100);
     },
     goToTop() {
       this.scrollPage(0);
@@ -1534,7 +1574,7 @@ export default {
   text-align: center;
 }
 #home-clumn {
-  flex: 1;
+  flex: 40;
   overflow-y: scroll;
 }
 /* 内容区域 */
@@ -1551,6 +1591,9 @@ export default {
 }
 .section {
   width: 1780px;
+  /*padding: 30px;*/
+  padding-top:20px;
+  padding-left: 30px;
   /* position: relative; */
 }
 .home-section-name {
@@ -1562,7 +1605,7 @@ export default {
   margin-bottom: 20px;
 }
 .section .list {
-  width: 537px;
+  width: 525px;
   height: 348px;
   margin-right: 40px;
   margin-bottom: 52px;
@@ -1572,13 +1615,13 @@ export default {
   /* display: inline-block; */
 }
 .list .img {
-  width: 537px;
-  height: 348px;
+  width: 525px;
+  height: 346px;
 }
 
 .list img {
   /* position: absolute; */
-  width: 537px;
+  width: 525px;
   height: 348px;
   border-radius: 5px;
   -moz-border-radius: 10px;
@@ -1590,14 +1633,14 @@ export default {
 }
 
 .small-list {
-  width: 309px;
+  width: 300px;
   height: 426px;
   margin-right: 36px;
   margin-bottom: 52px;
   border-radius: 5px;
 }
 .small-list .img {
-  width: 309px;
+  width: 300px;
   height: 426px;
 }
 .small-list .seleted-img {
@@ -1610,7 +1653,7 @@ export default {
 }
 .small-list img {
   /* position: absolute; */
-  width: 309px;
+  width: 300px;
   height: 426px;
   border-radius: 5px;
   -moz-border-radius: 10px;
@@ -1678,13 +1721,13 @@ export default {
   flex-direction: column;
 }
 .focus-area {
-  border: 1px solid red;
+  focus-border-style:solid;
 }
 
 .list-word {
   position: absolute;
   bottom: 0px;
-  width: 309px;
+  width: 300px;
   height: 53px;
   line-height: 53px;
   font-size: 34px;

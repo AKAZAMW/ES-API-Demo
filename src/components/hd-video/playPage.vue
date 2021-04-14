@@ -14,11 +14,11 @@
       </div>
       <div style="margin-top:60px;margin-left: 30px;">
         <div>
-          <p style="font-size: 24px;color: white">动物视界</p>
-          <p style="font-size: 16px;line-height:26px;font-family: 'Microsoft YaHei';color: white;width: 500px;">
-一千个人眼中有一千个哈姆雷特。
-一千种动物眼中也有一千个不一样的世界。
-世界之大，无奇不有！你感兴趣的都在这里。
+          <p style="font-size: 30px;color: white">动物视界</p>
+          <p style="font-size: 24px;line-height:32px;font-family: 'Microsoft YaHei';color: white;width: 500px;">
+一千个人眼中有一千个哈姆雷特
+一千种动物眼中也有一千个不一样的世界
+世界之大，无奇不有！你感兴趣的都在这里
 让我们一起来探索动物世界的奥秘吧...
           </p>
         </div>
@@ -57,7 +57,6 @@
         videoUrl:'https://vd3.bdstatic.com/mda-jf8u3ypduredhch1/sc/mda-jf8u3ypduredhch1.mp4?v_from_s=nj_haokan_4469&auth_key=1618285987-0-0-1d81ba2e0b92401c5310bee58759c259&bcevod_channel=searchbox_feed&pd=1&pt=3&abtest=',
         videoList:[
           'https://vd3.bdstatic.com/mda-jf8u3ypduredhch1/sc/mda-jf8u3ypduredhch1.mp4?v_from_s=nj_haokan_4469&auth_key=1618285987-0-0-1d81ba2e0b92401c5310bee58759c259&bcevod_channel=searchbox_feed&pd=1&pt=3&abtest=',
-          'https://vd2.bdstatic.com/mda-kaduxr1qnqcmeu0m/v1-cae/sc/mda-kaduxr1qnqcmeu0m.mp4?v_from_s=nj_haokan_4469&auth_key=1618285356-0-0-219ac591b174e2708a3d6926413f77da&bcevod_channel=searchbox_feed&pd=1&pt=3&abtest=',
           'https://vd2.bdstatic.com/mda-kd1y7cctqu28wcrx/sc/mda-kd1y7cctqu28wcrx.mp4?v_from_s=nj_haokan_4469&auth_key=1618285986-0-0-633474a5155ca479663fceeb1cfbe3f2&bcevod_channel=searchbox_feed&pd=1&pt=3&abtest=',
           'https://vd2.bdstatic.com/mda-kh0pugd4siga71x5/cae_h264_clips/mda-kh0pugd4siga71x5.mp4?auth_key=1618285983-0-0-23db17fbb3d46f34da6a6f63fae79d5c&bcevod_channel=searchbox_feed&pd=1&pt=3&abtest=',
           'https://vd2.bdstatic.com/mda-kkigetd72bmfgvks/sc/cae_h264_clips/1605758524/mda-kkigetd72bmfgvks.mp4?auth_key=1618285978-0-0-4ee924f07afb19a7335d94eb5452f150&bcevod_channel=searchbox_feed&pd=1&pt=3&abtest=',
@@ -65,6 +64,7 @@
           'https://vd2.bdstatic.com/mda-kadnyjfdfmrxmqmc/sc/mda-kadnyjfdfmrxmqmc.mp4?v_from_s=nj_haokan_4469&auth_key=1618285972-0-0-5fee2659405a6b9134dd5a1aaa2b9042&bcevod_channel=searchbox_feed&pd=1&pt=3&abtest=',
           'https://vd2.bdstatic.com/mda-ma6mpx9fys57buye/v1-cae/sc/mda-ma6mpx9fys57buye.mp4?v_from_s=nj_haokan_4469&auth_key=1618285966-0-0-a6c7eda735b040dda914311754d0540f&bcevod_channel=searchbox_feed&pd=1&pt=3&abtest=',
           'https://vd2.bdstatic.com/mda-macnxgupu2urng8t/v1-cae/sc/mda-macnxgupu2urng8t.mp4?v_from_s=nj_haokan_4469&auth_key=1618285963-0-0-f14d4403ad1a96eefe15e11fc7887bf7&bcevod_channel=searchbox_feed&pd=1&pt=3&abtest=',
+          'https://vd2.bdstatic.com/mda-kaduxr1qnqcmeu0m/v1-cae/sc/mda-kaduxr1qnqcmeu0m.mp4?v_from_s=nj_haokan_4469&auth_key=1618285356-0-0-219ac591b174e2708a3d6926413f77da&bcevod_channel=searchbox_feed&pd=1&pt=3&abtest=',
           'https://vd2.bdstatic.com/mda-mc3itznxf9qmxd6c/v1-cae/sc/mda-mc3itznxf9qmxd6c.mp4?v_from_s=nj_haokan_4469&auth_key=1618285961-0-0-82d529f917ee4dc1a25664588e48882a&bcevod_channel=searchbox_feed&pd=1&pt=3&abtest=',
         ]
       };

@@ -277,19 +277,19 @@ export default {
   margin-left: 100px;
 }
 .his-list {
-  width: 307.5px;
+  width: 320px;
   height: 510px;
   margin-top: 30px;
   margin-right: 50px;
   border: 1px solid red;
 }
 .his-list img {
-  width: 307.5px;
+  width: 320px;
   height: 426px;
   border-radius: 7.5px;
 }
 .list-word {
-  width: 307.5px;
+  width: 320px;
   height: 84px;
   line-height: 84px;
   font-size: 40px;
