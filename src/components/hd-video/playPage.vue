@@ -7,14 +7,19 @@
                     :controlStyle="{colors:['#00000000', '#000000']}"
                     :seekStyle="{seekBackgroundColor:'#50FFFFFF', seekProgressColor:'#ff6f2e', seekRadius:5.0, seekHeight:5, seekThumbSize:20, seekThumbColor:'#ffffff'}"
                     @video-load='onVideoLoaded' @video-buffer-start='onVideoBufferStart' @video-buffer-end="onVideoBufferEnd" @video-play="onVideoPlay"
-                    @video-pause="onVideoPause" @video-progress-change="onVideoProgressChange"/>
+                    @video-pause="onVideoPause" @video-progress-change="onVideoProgressChange"
+                    @video-end="onVideoEnd"/>
+        <div class="barrage">
+          <p v-if="barrageOpenFlag" v-for="data in barrageData" :style="{left:data.left,top:data.top}">{{data.text}}</p>
+        </div>
         <div v-show="videoLoading" class="loading">
           <loading-view class="loading-icon" color="#ff6f2e"></loading-view>
         </div>
+
       </div>
       <div style="margin-top:60px;margin-left: 30px;">
         <div>
-          <p style="font-size: 30px;color: white">动物视界</p>
+          <p ref="test" style="font-size: 30px;color: white;">动物视界</p>
           <p style="font-size: 24px;line-height:32px;font-family: 'Microsoft YaHei';color: white;width: 500px;">
 一千个人眼中有一千个哈姆雷特
 一千种动物眼中也有一千个不一样的世界
@@ -27,6 +32,11 @@
             <img v-if="playBtnFlag" style="width: 37px;height: 38px;" src="http://120.236.119.11:58011/ivod/jiangsuVR/img/detail/play_btn.png">
             <img v-if="!playBtnFlag" style="width: 37px;height: 38px;" src="http://120.236.119.11:58011/ivod/jiangsuVR/img/play/pause.png">
             <p style="font-size: 20px;color: white;margin-left: 10px;margin-top: 5px;">{{playPauseText}}</p>
+          </div>
+        </div>
+        <div :focusable=true :focusScale="1.1" @click="barrageClick" style="background-color: #6E4FF1;width: 120px;height: 60px;position: absolute;top:600px;left:160px;">
+          <div style="margin-left: 10px;margin-top: 10px;flex-direction: row;">
+            <p style="font-size: 20px;color: white;margin-left: 10px;margin-top: 5px;">{{barrageOpenFlag?'关闭弹幕':'打开弹幕'}}</p>
           </div>
         </div>
       </div>
@@ -50,8 +60,14 @@
   export default {
     data() {
       return {
+        pLeft: 100,
+        barrageData: [],
+        barrageSpeed: [1, 1.2, 1.5, 2],
+        trajectory: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+        barrageOpenFlag: true,
+        barrageInterval: 0,
         playPauseText: '暂停',
-        playBtnFlag:false,
+        playBtnFlag: false,
         videoLoading: true,
         currentVideoIndex:0,
         videoUrl:'https://vd3.bdstatic.com/mda-jf8u3ypduredhch1/sc/mda-jf8u3ypduredhch1.mp4?v_from_s=nj_haokan_4469&auth_key=1618285987-0-0-1d81ba2e0b92401c5310bee58759c259&bcevod_channel=searchbox_feed&pd=1&pt=3&abtest=',
@@ -77,8 +93,9 @@
       backPress() {
         Vue.Native.callNative('DeviceEventModule', 'invokeDefaultBackPressHandler');
       },
-      playVideo(url,index){
+      playVideo(url, index){
         if(this.currentVideoIndex !== index) {
+          this.closeBarrage();
           this.$refs.video.stop();
           this.showLoading();
           this.playPauseText = '暂停';
@@ -87,6 +104,54 @@
           this.videoUrl = url;
           this.currentVideoIndex = index;
         }
+      },
+      barrageClick() {
+        this.barrageOpenFlag = !this.barrageOpenFlag;
+      },
+      barrageBuilder() {
+        this.barrageOpenFlag = true;
+        var _this = this;
+        clearInterval(this.barrageInterval);
+        this.barrageInterval = setInterval(function() {
+          if(!_this.playBtnFlag) {
+          if (_this.barrageData.length < 10) {
+            //当前弹幕不足10条尝试增加弹幕
+            if (Math.random() > 0.9) {
+              //十分之一的概率产生弹幕
+              const index = Math.floor((Math.random() * _this.trajectory.length));
+              const val = _this.trajectory.splice(index, 1);
+              console.log('index==' + index)
+              console.log('val==' + val)
+              _this.barrageData.push({
+                text: Math.floor((Math.random() * 50)),
+                left: 1200,
+                top: val * 70,
+                trajectory: val,
+                speed: _this.barrageSpeed[(Math.floor((Math.random() * _this.barrageSpeed.length)))],
+              });
+            }
+          }
+          console.log(_this.barrageData)
+          _this.barrageData.forEach(function (d) {
+            d.left -= d.speed * 5;
+          });
+          _this.barrageData = _this.barrageData.filter(function (d) {
+            if (d.left <= -100) {
+              _this.trajectory.push(d.trajectory);
+            }
+            return d.left > -100;
+          });
+        }
+        }, 50);
+      },
+      closeBarrage() {
+        this.barrageOpenFlag = false;
+        clearInterval(this.barrageInterval);
+        this.trajectory = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+        this.barrageData = [];
+      },
+      random(start, end) {
+        return Math.floor(Math.random() * (end + 1 - start) + start);
       },
       play() {
         this.$refs.video.playOrPause();
@@ -105,6 +170,7 @@
       onVideoLoaded(){
         this.hideLoading()
         console.log('加载成功...');
+        this.barrageBuilder();
       },
 
       onVideoPlay(){
@@ -120,7 +186,14 @@
         console.log('aaaa', e);
         console.log('onVideoProgressChange position:' + e.position + ', duration:' + e.duration);
       },
-
+      onVideoEnd(e) {
+        this.closeBarrage();
+        var nextIndex = this.currentVideoIndex + 1;
+        if(nextIndex === this.videoList.length) {
+          nextIndex = 0;
+        }
+        this.playVideo(this.videoList[nextIndex], nextIndex);
+      },
       onVideoBufferStart(){
         this.showLoading()
         console.log('开始缓冲...');
@@ -148,6 +221,19 @@
     width: 1920px;
     height:1080px;
     display:flex;
+  }
+
+  .barrage{
+    position: absolute;
+    width:1200px;
+    height:675px;
+    border-width: 2px;
+  }
+
+  .barrage p {
+    color: white;
+    font-size: 30px;
+    position: absolute;
   }
   .container2 .video-wrap {
     width:1200px;
