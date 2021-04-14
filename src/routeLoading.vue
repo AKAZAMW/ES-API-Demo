@@ -28,7 +28,7 @@ export default {
         }
       }
     } else {
-      this.$router.push('/menu');
+      this.$router.push('/video/home');
     }
   },
 };

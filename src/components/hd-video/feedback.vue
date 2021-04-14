@@ -61,7 +61,7 @@
         </div>
       </div>
       <div style="margin-left: 500px;margin-top: 60px;">
-        <input :focusable="true" v-model="phoneNum" style="color: white;width: 920px;height: 60px;font-size: 36px;border-radius: 10px;background-color: #6343A1;" placeholder="请输入手机号码" >
+        <input type="number" :focusable="true" v-model="phoneNum" style="color: white;width: 920px;height: 60px;font-size: 36px;border-radius: 10px;background-color: #6343A1;" placeholder="请输入手机号码" >
       </div>
       <div style="width: 1920px;text-align: center;">
         <button :focusable="true" class="report_button" :focusScale="1.1"  @click="submit">
@@ -134,7 +134,7 @@
         this.showReportSuccessFlag=true;
         var _this = this;
         setTimeout(function () {
-          _this.routeTo('/video/feedback');
+          _this.routeTo('/video/home');
         }, 3000);
       },
       msgAlert(msg) {

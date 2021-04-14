@@ -1521,6 +1521,7 @@ export default {
   height: 900px;
 }
 .tab-list {
+  margin-top: 20px;
   padding: 25px 0;
   position: relative;
   color: white;
@@ -1758,7 +1759,7 @@ export default {
   width: 1780px;
   height: 61px;
   line-height: 61px;
-  background-color: purple;
+  focus-background-color: purple;
   margin-bottom: 50px;
 }
 .botom-word {
