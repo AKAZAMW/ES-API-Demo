@@ -7,9 +7,9 @@
         <p style="font-size: 30px;color: white;margin-left: 10px;font-family: 'Microsoft YaHei';">排行榜</p>
       </div>
     </div>
-    <div style="flex-direction: row;margin-left: 160px;" v-for="data in dataList">
+    <div style="flex-direction: row;margin-left: 330px;" v-for="data in dataList">
 <!--      <div v-for="d in data"  :focusable="true" :requestFocus="d.rankIndex===1" @focus="onFocus" @click="routeTo('/video/playPage')"  :index="d.rankIndex" :class="{rank_container:true,active:currentIndex===d.rankIndex}">-->
-      <div v-for="d in data"  :focusable="true" :requestFocus="d.rankIndex===1" @focus="onFocus" :focusScale="1.1" @click="routeTo('/video/playPage')"  :index="d.rankIndex" :class="{rank_container:true}">
+      <div style="margin-left: 30px" v-for="d in data"  :focusable="true" :requestFocus="d.rankIndex===1" @focus="onFocus" :focusScale="1.1" @click="routeTo('/video/playPage')"  :index="d.rankIndex" :class="{rank_container:true}">
         <div class="rank_content">
           <div class="rank_rank">
             <img src="../../../static/img/rank_bg.png">
